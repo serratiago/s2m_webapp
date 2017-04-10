@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+.success{
+	background-color:#F00 !important;
+	text-decoration: blink; 
+}
+
+#div_conteudo{
+	margin-top: 80px;
+	padding-top:40px;
+	margin:auto;
+	width:920px;
+}
+#div_login{
+ 	margin: auto;
+    width: 500px;
+    border: 3px solid #317eac;
+    padding: 10px;
+}
+.div_btn_form{
+	width:100%;
+	text-align:right;
+}
+
+.campo_form{
+	text-align:left !important;
+}
+
+.logo_medio{
+	width:15%;
+	height:15%;
+}
+
+#div_logo_login img{
+	float:right;
+	vertical-align:top;
+}
+
+#div_logo_cabecalho{
+	width:auto;
+	height:60px;
+	padding:10px 10px 10px 10px;
+	text-align:center;
+	margin-bottom:25px;
+}
+.logo_pequeno_cabecalho{
+	width:55px;
+	height:55px;
+	vertical-align:top;
+}
+.nav_menu{
+	width:920px;
+	margin: auto;
+}
+#div_menu{
+	padding-right:10px;
+	padding-left:10px;
+}
+
+.form_interno{
+	margin:auto;
+	width:500px;
+}
+
+.lbl_form{
+	text-align:left !important;
+	padding-left: 10px !important;
+}
+.quadro_hora{
+	margin:auto;
+	width:400px;
+	float:right;
+}
+.quadro_farmaceutico{
+	margin:auto;
+	width:400px;
+	float:left;
+}
+.horal_atual{
+	font-size:32px;
+	font-weight:bold;
+	
+}
