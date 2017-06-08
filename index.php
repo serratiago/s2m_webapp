@@ -14,7 +14,7 @@ include("php/conexao.php");
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/padrao.css" rel="stylesheet">
-
+    
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
     <!--[if lt IE 9]>
@@ -52,8 +52,10 @@ include("php/conexao.php");
   </head>
   <body>
 <div id="div_conteudo">
-   
-    
+   <center>
+   <br><br> <br><br>
+   <img src="img/logo_safe2med.png">
+    <!--
     <div id="div_login">
    <div id="div_logo_login">
     		<img src="img/logosaudecerta.png" class="logo_medio">
@@ -84,6 +86,7 @@ include("php/conexao.php");
 
 </div>
 
-</script>
+-->
+</center>
   </body>
 </html>
