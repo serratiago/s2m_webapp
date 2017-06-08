@@ -1,3 +1,7 @@
+<?
+include("php/config.php");
+include("php/conexao.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -17,6 +21,34 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+	$('#errolog').hide(); //Esconde o elemento com id errolog
+	$('#frm_login').submit(function(){ 	//Ao submeter formulário
+		var login=$('#txt_login').val();	//Pega valor do campo email
+		var senha=$('#txt_senha').val();	//Pega valor do campo senha
+		$.ajax({			//Função AJAX
+			url:"login.php",			//Arquivo php
+			type:"post",				//Método de envio
+			data: "login="+login+"&senha="+senha,	//Dados
+   			success: function (result){			//Sucesso no AJAX
+                		if(result==1){						
+                			location.href='restrito.php'	//Redireciona
+                		}else{
+                			$('#errolog').show();		//Informa o erro
+                		}
+            		}
+		})
+		return false;	//Evita que a página seja atualizada
+	})
+})
+</script>
   </head>
   <body>
 <div id="div_conteudo">
@@ -26,7 +58,7 @@
    <div id="div_logo_login">
     		<img src="img/logosaudecerta.png" class="logo_medio">
     	</div>
-    <form id="frm_login" class="form-horizontal">
+    <form id="frm_login" class="form-horizontal" method="Post">
         
         <h1>Saúde Certa</h1>
          
@@ -39,21 +71,19 @@
             </div>
             <div> 
                 <label class="control-label campo_form">Senha:<br />
-                <input id="txt_login" name="txt_login" type="password" placeholder=""  class="form-control" required autofocus> 
+                <input id="txt_senha" name="txt_senha" type="password" placeholder=""  class="form-control" required autofocus> 
                 </label>
             </div>
         </fieldset>
      	<div class="div_btn_form">
-         <button type="submit" class="btn btn-info">Entrar</button>
+         <button id="btn_envia_login" type="submit" class="btn btn-info">Entrar</button>
         </div> 
     
         </form>
     </div>
 
 </div>
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-    <script src="js/bootstrap.min.js"></script>
+
+</script>
   </body>
 </html>
