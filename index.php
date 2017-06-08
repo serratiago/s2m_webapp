@@ -8,8 +8,11 @@ include("php/conexao.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>Saúde Certa</title>
+    <title>Safe2Med</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +56,7 @@ include("php/conexao.php");
   <body>
 <div id="div_conteudo">
    <center>
-   <br><br> <br><br>
+   <br><br> <br><br> <br><br> <br><br>
    <img src="img/logo_safe2med.png">
     <!--
     <div id="div_login">
