@@ -56,12 +56,12 @@ include("php/conexao.php");
   <body>
 <div id="div_conteudo">
    <center>
-   <br><br> <br><br> ---<br><br> <br><br>
+   <br><br><br><br><br><br>
    <img src="img/logo_safe2med.png">
 <?
    // PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:dbservers2m.database.windows.net,1433; Database = dbwebS2M", "dbservers2m", "X28t12r80s");
+    $conn = new PDO("sqlsrv:server = tcp:dbservers2m.database.windows.net,1433; Database = dbwebS2M", "dbservers2m", "11X28t12r80s");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      print("Ok!");
 }
