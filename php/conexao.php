@@ -1,13 +1,11 @@
 <?
-//Conexão com o banco de dados
 try {
-    $conn = new PDO("mysql:host=$db_host;dbname=$db_banco", $db_usuario, $db_senha);
-    // set the PDO error mode to exception
+    $conn = new PDO("sqlsrv:server = tcp:$db_host; Database = $db_banco", "$db_usuario ", "$db_senha");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
 ?>

@@ -1,8 +1,8 @@
 <?
 
-$db_host = "mysql.cn59nqjeqln3.us-west-2.rds.amazonaws.com";
-$db_banco = "database";
-$db_usuario = "bancoadm";
+$db_host = "dbservers2m.database.windows.net,1433";
+$db_banco = "dbwebS2M";
+$db_usuario = "dbservers2m";
 $db_senha = "X28t12r80s";
 
 ?>
