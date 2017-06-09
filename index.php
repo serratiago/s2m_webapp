@@ -56,7 +56,7 @@ include("php/conexao.php");
   <body>
 <div id="div_conteudo">
    <center>
-   <br><br><br><br><br><br>
+   <br><br><br><br><br><br><br>
    <img src="img/logo_safe2med.png">
 
     <!--
