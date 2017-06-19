@@ -3,15 +3,34 @@
 // Dados do banco
 $dbhost   = "dbservers2m.database.windows.net";   #Nome do host
 $db       = "dbwebS2M";   #Nome do banco de dados
-$user     = "dbservers2m@dbservers2m"; #Nome do usuário
+$user     = "dbservers2m"; #Nome do usuário
 $password = "X28t12r80s";
 
 
 
-$conexao = mssql_connect($dbhost , $user, $password) or die(mssql_get_last_message());
-mssql_select_db($db) or die (mssql_get_last_message());
+$serverName = "dbservers2m.database.windows.net";
+$connectionOptions = array(
+    "Database" => "dbwebS2M",
+    "Uid" => "dbservers2m",
+    "PWD" => "X28t12r80s"
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+$tsql= "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
+     FROM [SalesLT].[ProductCategory] pc
+     JOIN [SalesLT].[Product] p
+     ON pc.productcategoryid = p.productcategoryid";
+$getResults= sqlsrv_query($conn, $tsql);
+echo ("Reading data from table" . PHP_EOL);
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+    echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
+}
+sqlsrv_free_stmt($getResults);
 
 
+exit();
 
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
