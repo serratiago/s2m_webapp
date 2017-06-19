@@ -19,13 +19,15 @@ if( $conn === false ) {
 }
 echo '{"convenios":[';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-	$int_id_convenio=$row['int_id_convenio'];
-	$str_nome_convenio=$row['str_nome_convenio'];
-	echo '{"int_id_convenio":"'.$int_id_convenio.'","str_nome_convenio":"'.$str_nome_convenio.'"}'; 
+	$separador = '';
 	if (++$cont != $total) {
-        echo ',';
+        $separador = ',';
     } 
 
+	$int_id_convenio=$row['int_id_convenio'];
+	$str_nome_convenio=$row['str_nome_convenio'];
+	echo '{"int_id_convenio":"'.$int_id_convenio.'","str_nome_convenio":"'.$str_nome_convenio.'"}'.$separador ; 
+	
 }
 echo ']}';
 
