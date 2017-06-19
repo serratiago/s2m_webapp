@@ -59,7 +59,7 @@ include("php/conexao.php");
    <br><br><br><br><br><br><br>
    <img src="img/logo_safe2med.png">
    <br><br>
-   <b>Aecce:</b><a href="http://Safe2Med.com">safe2med.com</a>
+   <b>Acesse:</b><a href="http://Safe2Med.com">safe2med.com</a>
 
     <!--
     <div id="div_login">
