@@ -15,20 +15,13 @@ if( $conn === false ) {
 }
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['int_id_convenio'] . " - " . $row['str_nome_convenio'] . PHP_EOL);
 
-$int_id_convenio=$row['int_id_convenio']; 
-$str_nome_convenio=$row['str_nome_convenio']; 
+            $dados[]=$row;
+        }
 
-$posts[] = array('int_id_convenio'=> $int_id_convenio, 'str_nome_convenio'=> $str_nome_convenio);
+        $json['dados']=$dados;
+    }
 
-} 
-
-$response['posts'] = $posts;
-
-$fp = fopen('results.json', 'w');
-fwrite($fp, json_encode($response));
-fclose($fp);
-
+    echo json_encode($json)
 
 ?> 
