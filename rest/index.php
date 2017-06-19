@@ -1,10 +1,16 @@
 <?php
- 
+ echo $_SERVER['SERVER_ADDR'];
 // Dados do banco
 $dbhost   = "dbservers2m.database.windows.net";   #Nome do host
 $db       = "dbwebS2M";   #Nome do banco de dados
-$user     = "dbservers2m"; #Nome do usuário
-$password = "X28t12r80s";   #Senha do usuário
+$user     = "dbservers2m@dbservers2m"; #Nome do usuário
+$password = "X28t12r80s";
+
+
+
+$conexao = mssql_connect($dbhost , $user, $password) or die(mssql_get_last_message());
+mssql_select_db($db) or die (mssql_get_last_message());
+
 
 
 // get the HTTP method, path and body of the request
@@ -12,12 +18,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
  
-// connect to the mysql database
-$link = @mssql_connect($dbhost,$user,$password) or die("Não foi possível a conexão com o servidor!");
-@mssql_select_db("$db") or die("Não foi possível selecionar o banco de dados!");
- 
-
- exit();
 // retrieve the table and key from the path
 $table = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
 $key = array_shift($request)+0;
