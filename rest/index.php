@@ -18,8 +18,8 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $tsql= "select int_id_convenio, str_nome_convenio from tbl_convenio";
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("<br>Reading data from table: " . PHP_EOL);
-echo ("<br>Resultado: ". $getResults);
+echo ("Conexão ".$conn);
+
 if( $conn === false ) {
      die( print_r( sqlsrv_errors(), true));
 }
