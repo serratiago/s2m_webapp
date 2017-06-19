@@ -8,7 +8,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 $tsql= "select str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
-$tsql += "str_nome_medico,int_id_andar_quarto,int_num_quarto from tbl_convenio";
+$tsql += "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao";
 $getResults = sqlsrv_query($conn, $tsql);
 
 if( $conn === false ) {
