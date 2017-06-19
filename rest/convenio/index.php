@@ -14,14 +14,21 @@ $json = array();
 if( $conn === false ) {
      die( print_r( sqlsrv_errors(), true));
 }
-
+echo '{"convenios": [';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 
-            $dados[]=$row;
-        }
+$int_id_convenio=$row['int_id_convenio'];
+$str_nome_convenio=$row['str_nome_convenio'];
+echo '
 
-    $json['dados']=$dados;
+{
 
-    echo json_encode($json)
+"int_id_convenio":"'.$int_id_convenio.'",
+
+"str_nome_convenio":"'.$str_nome_convenio.'"
+
+},'; 
+}
+echo ']}';
 
 ?> 
