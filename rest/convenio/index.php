@@ -19,8 +19,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
             $dados[]=$row;
         }
 
-        $json['dados']=$dados;
-    }
+    $json['dados']=$dados;
 
     echo json_encode($json)
 
