@@ -14,7 +14,7 @@ $getResults = sqlsrv_query($conn, $tsql);
 if( $conn === false ) {
      die( print_r( sqlsrv_errors(), true));
 }
-$json = '{"convenios":[';
+$json = '{"internacao":[';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$separador = '';
 
