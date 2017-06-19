@@ -1,33 +1,18 @@
 <?php
- echo $_SERVER['SERVER_ADDR'];
-// Dados do banco
-$dbhost   = "dbservers2m.database.windows.net";   #Nome do host
-$db       = "dbwebS2M";   #Nome do banco de dados
-$user     = "dbservers2m"; #Nome do usuário
-$password = "X28t12r80s";
-
-
-
-$serverName = "dbservers2m.database.windows.net";
-$connectionOptions = array(
-    "Database" => "dbwebS2M",
-    "Uid" => "dbservers2m",
-    "PWD" => "X28t12r80s"
-);
-//Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$tsql= "select int_id_convenio, str_nome_convenio from tbl_convenio";
-$getResults= sqlsrv_query($conn, $tsql);
-echo ("Conexão ".$conn);
-
-if( $conn === false ) {
-     die( print_r( sqlsrv_errors(), true));
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:dbservers2m.database.windows.net,1433; Database = dbwebS2M", "dbservers2m", "X28t12r80s");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
 
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['int_id_convenio'] . " - " . $row['str_nome_convenio'] . PHP_EOL);
-}
-sqlsrv_free_stmt($getResults);
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "dbservers2m@dbservers2m", "pwd" => "X28t12r80s", "Database" => "dbwebS2M", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:dbservers2m.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 exit();
