@@ -20,9 +20,9 @@ $tsql= "select int_id_convenio, str_nome_convenio from tbl_convenio";
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("<br>Reading data from table: " . PHP_EOL);
 echo ("<br>Resultado: ". $getResults);
-
-if ($getResults == FALSE)
-    echo ("Erro:" . sqlsrv_errors());
+if( $conn === false ) {
+     die( print_r( sqlsrv_errors(), true));
+}
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     echo ($row['int_id_convenio'] . " - " . $row['str_nome_convenio'] . PHP_EOL);
