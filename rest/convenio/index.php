@@ -9,8 +9,6 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql= "select int_id_convenio, str_nome_convenio from tbl_convenio";
 $getResults = sqlsrv_query($conn, $tsql);
 
-$total  = sqlsrv_num_rows($getResults);
-$cont = 0 ;
 
 $json = array();
 
@@ -20,15 +18,12 @@ if( $conn === false ) {
 echo '{"convenios":[';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$separador = '';
-	if (++$cont != $total) {
-        $separador = ',';
-    } 
 
 	$int_id_convenio=$row['int_id_convenio'];
 	$str_nome_convenio=$row['str_nome_convenio'];
-	echo '{"int_id_convenio":"'.$int_id_convenio.'","str_nome_convenio":"'.$str_nome_convenio.'"}'.$separador ; 
+	$json .= '{"int_id_convenio":"'.$int_id_convenio.'","str_nome_convenio":"'.$str_nome_convenio.'"},'; 
 	
 }
-echo ']}';
-
+$json .= ']}';
+echo str_replace(',]}', ']}', $json);
 ?> 
