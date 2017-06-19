@@ -1,5 +1,4 @@
 <?php
-echo "Teste";
 // SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "dbservers2m@dbservers2m", "pwd" => "X28t12r80s", "Database" => "dbwebS2M", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:dbservers2m.database.windows.net,1433";
