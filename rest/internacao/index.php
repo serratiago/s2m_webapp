@@ -27,9 +27,9 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$int_num_quarto = utf8_encode($row['int_num_quarto']);
 
 	$json .= '{"str_nome_paciente":"'.$str_nome_paciente.'","str_nome_convenio:"'.$str_nome_convenio.'",'; 
-	$json .= '{"int_sexo_paciente":"'.$int_sexo_paciente.'","int_dt_nascimento_paciente:"'.$int_dt_nascimento_paciente.'",'; 
-	$json .= '{"str_nome_medico":"'.$str_nome_medico.'","int_id_andar_quarto:"'.$int_id_andar_quarto.'",'; 
-	$json .= '{"int_num_quarto":"'.$int_num_quarto.'"},'; 
+	$json .= '"int_sexo_paciente":"'.$int_sexo_paciente.'","int_dt_nascimento_paciente:"'.$int_dt_nascimento_paciente.'",'; 
+	$json .= '"str_nome_medico":"'.$str_nome_medico.'","int_id_andar_quarto:"'.$int_id_andar_quarto.'",'; 
+	$json .= '"int_num_quarto":"'.$int_num_quarto.'"},'; 
 	
 }
 $json .= ']}';
