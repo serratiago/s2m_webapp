@@ -15,9 +15,11 @@ if( $conn === false ) {
      die( print_r( sqlsrv_errors(), true));
 }
 $json = '{"internacao":[';
+
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$separador = '';
 
+	echo "---<br>";
 	$str_nome_paciente = utf8_encode($row['str_nome_paciente']);
 	$str_nome_convenio =  utf8_encode($row['str_nome_convenio']);
 	$int_sexo_paciente = utf8_encode($row['int_sexo_paciente']);
@@ -31,6 +33,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$json .= '{"int_sexo_paciente":"'.$int_sexo_paciente.'","int_dt_nascimento_paciente:"'.$int_dt_nascimento_paciente.'"}'; 
 	$json .= '{"str_nome_medico":"'.$str_nome_medico.'","int_id_andar_quarto:"'.$int_id_andar_quarto.'"}'; 
 	$json .= '{"int_num_quarto":"'.$int_num_quarto.'"},'; 
+	echo $json ."<br>";
 	
 }
 $json .= ']}';
