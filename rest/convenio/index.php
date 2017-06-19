@@ -16,8 +16,8 @@ $json = '{"convenios":[';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$separador = '';
 
-	$int_id_convenio=$row['int_id_convenio'];
-	$str_nome_convenio=$row['str_nome_convenio'];
+	$int_id_convenio= utf8_encode($row['int_id_convenio']);
+	$str_nome_convenio=  utf8_encode($row['str_nome_convenio']);
 	$json .= '{"int_id_convenio":"'.$int_id_convenio.'","str_nome_convenio":"'.$str_nome_convenio.'"},'; 
 	
 }
