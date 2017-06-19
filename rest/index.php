@@ -16,6 +16,8 @@ $input = json_decode(file_get_contents('php://input'),true);
 $link = @mssql_connect($dbhost,$user,$password) or die("Não foi possível a conexão com o servidor!");
 @mssql_select_db("$db") or die("Não foi possível selecionar o banco de dados!");
  
+
+ exit();
 // retrieve the table and key from the path
 $table = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
 $key = array_shift($request)+0;
