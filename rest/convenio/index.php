@@ -9,13 +9,10 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 $tsql= "select int_id_convenio, str_nome_convenio from tbl_convenio";
 $getResults = sqlsrv_query($conn, $tsql);
 
-
-$json = array();
-
 if( $conn === false ) {
      die( print_r( sqlsrv_errors(), true));
 }
-echo '{"convenios":[';
+$json = '{"convenios":[';
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$separador = '';
 
