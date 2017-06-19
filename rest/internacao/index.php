@@ -8,7 +8,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 $tsql= "select str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
-$tsql += "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao";
+$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao";
 $getResults = sqlsrv_query($conn, $tsql);
 
 if( $conn === false ) {
@@ -17,9 +17,7 @@ if( $conn === false ) {
 $json = '{"internacao":[';
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-	$separador = '';
-
-	echo "---<br>";
+	
 	$str_nome_paciente = utf8_encode($row['str_nome_paciente']);
 	$str_nome_convenio =  utf8_encode($row['str_nome_convenio']);
 	$int_sexo_paciente = utf8_encode($row['int_sexo_paciente']);
@@ -28,12 +26,10 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$int_id_andar_quarto = utf8_encode($row['int_id_andar_quarto ']);
 	$int_num_quarto = utf8_encode($row['int_num_quarto']);
 
-
 	$json .= '{"str_nome_paciente":"'.$str_nome_paciente.'","str_nome_convenio:"'.$str_nome_convenio.'"}'; 
 	$json .= '{"int_sexo_paciente":"'.$int_sexo_paciente.'","int_dt_nascimento_paciente:"'.$int_dt_nascimento_paciente.'"}'; 
 	$json .= '{"str_nome_medico":"'.$str_nome_medico.'","int_id_andar_quarto:"'.$int_id_andar_quarto.'"}'; 
 	$json .= '{"int_num_quarto":"'.$int_num_quarto.'"},'; 
-	echo $json ."<br>";
 	
 }
 $json .= ']}';
