@@ -35,8 +35,6 @@ $SQL .=' FROM tbl_paciente';
 
 $result = mssql_query($SQL);
 
-if (!mssql_num_rows($result)) {
-
 while ($rs =mssql_fetch_assoc($result)){                           
 	 ?>
 	 <tr class="info">
