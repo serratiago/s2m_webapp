@@ -44,7 +44,7 @@ $str_result = "";
         chart: {
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real',
-           direction: -1, 
+           direction: 1, 
         slantedText: true, 
         slantedTextAngle: 90 // here you can even use 180 
         },
