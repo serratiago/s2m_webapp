@@ -13,7 +13,7 @@ $str_result = "";
      for($i=0; $rs = $query->fetch(); $i++){
 
      
-     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
+     		$str_result .= "["". $rs["hora"] ."",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
 
      		if($numrows != $i){
 				$str_result .= ",";
