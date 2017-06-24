@@ -43,7 +43,7 @@ $SQL .= " FROM tbl_paciente";
      $ano = substr($rs['int_dt_nascimento_paciente'],0,4);            
      $mes = substr($rs['int_dt_nascimento_paciente'],4,2);  
      $dia = substr($rs['int_dt_nascimento_paciente'],6,2);  
-     $data = $ano."/".$mes."/".$ano;
+     $data = $dia."/".$mes."/".$ano;
 
 	 ?>
 	 <tr class="info">
