@@ -1,3 +1,23 @@
+<?php
+$SQL = "SELECT SELECT int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora";
+$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor";
+$str_result = "";
+
+	$query = $conn->prepare($SQL);
+    $query->execute();
+ 
+     for($i=0; $rs = $query->fetch(); $i++){
+
+     	if ($str_result != ""){
+     			$str_result .=",";
+     	}
+     
+     		$str_result .= "['". $rs["hora"] ."','". $rs["temperaturaAmbiente"] ."','". $rs["temperaturaCorporal"] ."']"
+
+	}
+?>
+<input type="text" name="str_banco" id="str_banco">
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
      
@@ -7,32 +27,17 @@
     function drawChart() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Hora');
-      data.addColumn('number', 'Temperatura Ambiente');
-      data.addColumn('number', 'Temperatura Corporal');
+      data.addColumn('string', 'Hora');
+      data.addColumn('string', 'Temperatura Ambiente');
+      data.addColumn('string', 'Temperatura Corporal');
 
 
-      data.addRows([
-        [1,  37.8, 80.8],
-        [2,  30.9, 69.5],
-        [3,  25.4,   57],
-        [4,  11.7, 18.8],
-        [5,  11.9, 17.6],
-        [6,   8.8, 13.6],
-        [7,   7.6, 12.3],
-        [8,  12.3, 29.2],
-        [9,  16.9, 42.9],
-        [10, 12.8, 30.9],
-        [11,  5.3,  7.9],
-        [12,  6.6,  8.4],
-        [13,  4.8,  6.3],
-        [14,  4.2,  6.2]
-      ]);
+      data.addRows([document.getElementById('str_banco').Value]);
 
       var options = {
         chart: {
-          title: 'Box Office Earnings in First Two Weeks of Opening',
-          subtitle: 'in millions of dollars (USD)'
+          title: 'Temperaturas',
+          subtitle: 'Acompanhamento em tempo real'
         },
         width: 900,
         height: 500
