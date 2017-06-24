@@ -22,13 +22,33 @@ include("php/cabecalho.php");
     </tr>
   </thead>
   <tbody>
-    <tr class="info">
-      <td>113</td>
-      <td>quarto</td>
-      <td>Rodrigo Santos</td>
-      <td>Acolhimento</td>
-      <td>Carlos Eduardo</td>
-    </tr>
+
+<?
+if (!$conn || !mssql_select_db($myDB, $conn)) {
+    die('Unable to connect or select database!');
+}
+
+
+$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente,";
+$SQL .=" FROM tbl_paciente";
+
+$result = mssql_query($SQL);
+
+if (!mssql_num_rows($result)) {
+
+while ($rs =mssql_fetch_assoc($result)){                           
+	 ?>
+	 <tr class="info">
+	      <td>113</td>
+	      <td>quarto</td>
+	      <td><?= $rs["str_nome_paciente"] ?></td>
+	      <td>Acolhimento</td>
+	      <td>Carlos Eduardo</td>
+	   </tr>
+	<?
+	}
+	?>
+   
   </tbody>
 </table>
 
