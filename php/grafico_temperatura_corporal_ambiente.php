@@ -14,11 +14,8 @@ $str_result = "";
  
      for($i=0; $rs = $query->fetch(); $i++){
 
-     	if ($str_result != ""){
-     			$str_result .=",";
-     	}
      
-     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]"."\n";
+     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],"."\n";
 
 	}
 ?>
