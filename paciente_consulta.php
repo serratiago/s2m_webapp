@@ -29,7 +29,7 @@ if (!$conn || !mssql_select_db($myDB, $conn)) {
 }
 
 
-$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente,";
+$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente";
 $SQL .=" FROM tbl_paciente";
 
 $result = mssql_query($SQL);
