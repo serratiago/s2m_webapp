@@ -41,7 +41,7 @@ while ($rs =mssql_fetch_assoc($result)){
 	 <tr class="info">
 	      <td>113</td>
 	      <td>quarto</td>
-	      <td><?= $rs["str_nome_paciente"] ?></td>
+	      <td><?php echo $rs["str_nome_paciente"]; ?></td>
 	      <td>Acolhimento</td>
 	      <td>Carlos Eduardo</td>
 	   </tr>
