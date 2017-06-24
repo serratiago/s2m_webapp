@@ -56,12 +56,9 @@ include("php/conexao.php");
   <body>
 <div id="div_conteudo">
    <center>
-   <br><br><br><br><br><br><br>
+   <br><br><br><br><br><br>
    <img src="img/logo_safe2med.png">
-   <br><br><br>
-   <b>Safe2Med</b>
-   <br><br>
-   <a href="http://Safe2Med.com">safe2med.com</a>
+
 
     <!--
     <div id="div_login">

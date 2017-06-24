@@ -15,6 +15,7 @@ include("php/cabecalho.php");
   <thead>
     <tr>
       <th>Registro</th>
+      <th>Quarto</th>
       <th>Nome</th>
       <th>Situação</th>
       <th>Responsável</th>
@@ -23,29 +24,11 @@ include("php/cabecalho.php");
   <tbody>
     <tr class="info">
       <td>113</td>
+      <td>quarto</td>
       <td>Rodrigo Santos</td>
       <td>Acolhimento</td>
       <td>Carlos Eduardo</td>
     </tr>
-     <tr class="info">
-      <td>211</td>
-      <td>Maria da Silva</td>
-      <td>Internada</td>
-      <td>Marcelo Cardoso</td>
-    </tr>
-     <tr class="info">
-      <td>321</td>
-      <td>Helena Maria</td>
-      <td>Internada</td>
-      <td>Carlos Eduardo</td>
-    </tr>
-       <tr class="info">
-      <td>345</td>
-      <td>Márcia Rodrgiues</td>
-      <td>Internada</td>
-      <td>Carlos Eduardo</td>
-    </tr>
-  
   </tbody>
 </table>
 
