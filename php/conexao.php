@@ -1,4 +1,4 @@
-<?
+<?php
 try {
     $conn = new PDO("sqlsrv:server = tcp:$db_host; Database = $db_banco", "$db_usuario ", "$db_senha");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,4 +1,4 @@
-<?
+<?php error_reporting( E_ALL );
 
 $db_host = "dbservers2m.database.windows.net,1433";
 $db_banco = "dbwebS2M";

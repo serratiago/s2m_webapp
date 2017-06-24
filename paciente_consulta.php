@@ -1,4 +1,4 @@
-<?
+<?php
 include("php/cabecalho.php");
 ?>
 <div id="div_conteudo">
@@ -23,7 +23,8 @@ include("php/cabecalho.php");
   </thead>
   <tbody>
 
-<?
+<?php
+
 if (!$conn || !mssql_select_db($db_banco, $conn)) {
     die('Unable to connect or select database!');
 }
