@@ -34,7 +34,7 @@ $str_result = "";
 
   	String_dados = "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("],]","]]");
-  
+  	document.getElementById("str_banco").value = String_dados;
       data.addRows(JSON.parse(String_dados));
 
       var options = {
