@@ -15,32 +15,40 @@ include("php/cabecalho.php");
   <thead>
     <tr>
       <th>Registro</th>
-      <th>Quarto</th>
       <th>Nome</th>
-      <th>Situação</th>
-      <th>Responsável</th>
+      <th>Sexo</th>
+      <th>Idade</th>
     </tr>
   </thead>
   <tbody>
 
 <?php
 
-$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente";
+$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente, str_registro_paciente";
 $SQL .= " FROM tbl_paciente";
 
 
 	$query = $conn->prepare($SQL);
     $query->execute();
  
-      for($i=0; $rs = $query->fetch(); $i++){
-                         
+     for($i=0; $rs = $query->fetch(); $i++){
+     
+     if( $rs['int_sexo_paciente'] == 1) {
+     	$sexo = "Masculino";
+     }else{
+		$sexo = "Feminino";
+     } 
+
+
+     $ano = substr($rs['str_nome_paciente'],0,4);            
+
+
 	 ?>
 	 <tr class="info">
-	      <td>113</td>
-	      <td>quarto</td>
+	      <td><?php echo $rs['str_registro_paciente']; ?></td>
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
-	      <td>Acolhimento</td>
-	      <td>Carlos Eduardo</td>
+	      <td><?php echo $sexo; ?></td>
+	      <td><?php echo $ano; ?></td>
 	   </tr>
 	<?
 	}
