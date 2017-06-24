@@ -44,6 +44,12 @@ $str_result = "";
         chart: {
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real'
+   		 hAxis: { 
+        direction: -1, 
+        slantedText: true, 
+        slantedTextAngle: 90 // here you can even use 180 
+    } 
+};
         },
         width: 900,
         height: 500
@@ -55,6 +61,6 @@ $str_result = "";
     }
 
     </script>
-<html lang="br" dir="rtl">
+<html lang="br">
     <div id="linechart" style="width: 900px; height: 500px"></div>
 </html>
