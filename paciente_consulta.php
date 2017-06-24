@@ -40,15 +40,17 @@ $SQL .= " FROM tbl_paciente";
      } 
 
 
-     $ano = substr($rs['str_nome_paciente'],0,4);            
-
+     $ano = substr($rs['int_dt_nascimento_paciente'],0,4);            
+     $mes = substr($rs['int_dt_nascimento_paciente'],4,2);  
+     $dia = substr($rs['int_dt_nascimento_paciente'],6,2);  
+     $data = $ano."/".$mes."/".$ano;
 
 	 ?>
 	 <tr class="info">
 	      <td><?php echo $rs['str_registro_paciente']; ?></td>
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td><?php echo $sexo; ?></td>
-	      <td><?php echo $ano; ?></td>
+	      <td><?php echo $data; ?></td>
 	   </tr>
 	<?
 	}
