@@ -36,7 +36,7 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Ambiente');
       data.addColumn('number', 'Temperatura Corporal');
 
-  	String_dados = "[". document.getElementById('str_banco').value ."]";
+  	String_dados = "[". document.getElementById("str_banco").value ."]";
   
       data.addRows(JSON.parse(String_dados));
 
