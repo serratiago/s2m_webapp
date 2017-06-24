@@ -18,7 +18,7 @@ $str_result = "";
      			$str_result .=",";
      	}
      
-     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $$rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
+     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
 
 	}
 ?>
@@ -38,7 +38,7 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Corporal');
 
   
-  var $dados = [['3:25',39,21.8],['3:25',31,26],['3:25',33.2,34],['3:25',44,42.2]];
+  var $dados = [new google.charts.Line(document.getElementById('str_banco')];
 
       data.addRows($dados);
 
