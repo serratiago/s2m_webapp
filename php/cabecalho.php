@@ -16,6 +16,7 @@ include 'conexao.php';
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/padrao.css" rel="stylesheet">
 
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
     <!--[if lt IE 9]>
