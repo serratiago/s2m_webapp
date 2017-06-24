@@ -25,8 +25,10 @@ include("php/cabecalho.php");
 
 <?php
 
-$SQL = 'SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente';
-$SQL .=' FROM tbl_paciente';
+$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente";
+$SQL .= " FROM tbl_paciente";
+
+echo $SQL;
 
 	$query = $pdo->prepare($SQL);
     $query->execute();
