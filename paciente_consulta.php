@@ -25,17 +25,14 @@ include("php/cabecalho.php");
 
 <?php
 
-if (!$conn || !mssql_select_db($db_banco, $conn)) {
-    die('Unable to connect or select database!');
-}
-
-
 $SQL = 'SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente';
 $SQL .=' FROM tbl_paciente';
 
-$result = mssql_query($SQL);
-
-while ($rs =mssql_fetch_assoc($result)){                           
+	$query = $pdo->prepare($SQL);
+    $query->execute();
+ 
+      for($i=0; $rs = $query->fetch(); $i++){
+                         
 	 ?>
 	 <tr class="info">
 	      <td>113</td>
