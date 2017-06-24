@@ -1,7 +1,4 @@
 <?php
-
-
-
 include 'config.php';
 include 'conexao.php';
 
@@ -11,11 +8,16 @@ $str_result = "";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
- 
+ 	$numrows = $result->rowCount()
+
      for($i=0; $rs = $query->fetch(); $i++){
 
      
-     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],"."\n";
+     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
+
+     		if($numrows != $i){
+				$str_result .= ",";
+     		}
 
 	}
 ?>
@@ -24,7 +26,7 @@ $str_result = "";
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
      
-           google.charts.load('current', {'packages':['line']});
+      google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
@@ -34,10 +36,9 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Ambiente');
       data.addColumn('number', 'Temperatura Corporal');
 
+  	String_dados = "[". document.getElementById('str_banco') ."]";
   
-  var $dados = [document.getElementById('str_banco')];
-
-      data.addRows($dados);
+      data.addRows(JSON.parse(String_dados));
 
       var options = {
         chart: {
@@ -54,6 +55,5 @@ $str_result = "";
     }
 
     </script>
-
 
     <div id="linechart" style="width: 900px; height: 500px"></div>
