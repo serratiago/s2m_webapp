@@ -42,13 +42,11 @@ $str_result = "";
 
       var options = {
         chart: {
-          title: 'Temperaturas',
-          subtitle: 'Acompanhamento em tempo real'
-   		 hAxis: { 
+        title: 'Temperaturas',
+        subtitle: 'Acompanhamento em tempo real'
         direction: -1, 
         slantedText: true, 
         slantedTextAngle: 90 // here you can even use 180 
-    } 
 };
         },
         width: 900,
