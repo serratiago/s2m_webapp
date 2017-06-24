@@ -12,7 +12,7 @@ $str_result = "";
      			$str_result .=",";
      	}
      
-     		$str_result .= "['". $rs["hora"] ."','". $rs["temperaturaAmbiente"] ."','". $rs["temperaturaCorporal"] ."']"
+     		$str_result .= "['". $rs["hora"] ."','". $rs["temperaturaAmbiente"] ."','". $rs["temperaturaCorporal"] ."']";
 
 	}
 ?>
