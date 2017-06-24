@@ -11,7 +11,7 @@ include("php/cabecalho.php");
   </div>
   <div class="panel-body">
   
-<table class="table table-striped table-hover">
+<table id="click" class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Registro</th>
@@ -46,7 +46,7 @@ $SQL .= " FROM tbl_paciente";
      $data = $dia."/".$mes."/".$ano;
 
 	 ?>
-	 <tr class="info row-link clickable" data-href="#">
+	 <tr class="info row-link clickable" data-href="uol.com.br">
 	      <td><?php echo $rs['str_registro_paciente']; ?></td>
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td><?php echo $sexo; ?></td>

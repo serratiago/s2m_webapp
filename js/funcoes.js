@@ -1,12 +1,10 @@
-$('.table tr.row-link').each(function(){
-    $(this).css('cursor','pointer').hover(
-        function(){ 
-            $(this).addClass('active'); 
-        },  
-        function(){ 
-            $(this).removeClass('active'); 
-        }).click( function(){ 
-            document.location = $(this).attr('data-href'); 
+$(document).ready(function() {
+
+    $('#click tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
         }
-    );
+    });
+
 });
