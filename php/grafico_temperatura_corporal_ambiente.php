@@ -18,7 +18,7 @@ $str_result = "";
      			$str_result .=",";
      	}
      
-     		$str_result .= "['". $rs["hora"] ."','". $rs["temperaturaAmbiente"] ."','". $rs["temperaturaCorporal"] ."']";
+     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $$rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
 
 	}
 ?>
@@ -34,11 +34,13 @@ $str_result = "";
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Hora');
-      data.addColumn('string', 'Temperatura Ambiente');
-      data.addColumn('string', 'Temperatura Corporal');
+      data.addColumn('number', 'Temperatura Ambiente');
+      data.addColumn('number', 'Temperatura Corporal');
 
+  
+  var $dados = [['3:25',39,21.8],['3:25',31,26],['3:25',33.2,34],['3:25',44,42.2]];
 
-      data.addRows([document.getElementById('str_banco').Value]);
+      data.addRows($dados);
 
       var options = {
         chart: {
