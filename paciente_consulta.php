@@ -29,8 +29,8 @@ if (!$conn || !mssql_select_db($db_banco, $conn)) {
 }
 
 
-$SQL = "SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente";
-$SQL .=" FROM tbl_paciente";
+$SQL = 'SELECT int_id_paciente, str_nome_paciente, int_sexo_paciente, int_dt_nascimento_paciente';
+$SQL .=' FROM tbl_paciente';
 
 $result = mssql_query($SQL);
 
@@ -41,7 +41,7 @@ while ($rs =mssql_fetch_assoc($result)){
 	 <tr class="info">
 	      <td>113</td>
 	      <td>quarto</td>
-	      <td><?php echo $rs["str_nome_paciente"]; ?></td>
+	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td>Acolhimento</td>
 	      <td>Carlos Eduardo</td>
 	   </tr>
