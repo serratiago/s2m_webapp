@@ -45,7 +45,7 @@ $str_result = "";
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real' 
         },
-        hAxis{
+        hAxis: {
        	direction: -1, 
         slantedText: true, 
         slantedTextAngle: 90 // here you can even use 180
