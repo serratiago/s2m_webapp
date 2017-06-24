@@ -3,7 +3,7 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora";
-$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc";
+$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg, desc";
 $str_result = "";
 
 	$query = $conn->prepare($SQL);
@@ -17,8 +17,9 @@ $str_result = "";
 
 	}
 ?>
- <input type="hidden" id="str_banco" name="str_banco" value="<?php echo $str_result ?>">
 
+
+<textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
