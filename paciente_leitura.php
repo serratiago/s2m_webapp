@@ -36,6 +36,9 @@ include("php/cabecalho.php");
         chart.draw(data, options);
       }
     </script>
+
+
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
 </div>
 </div>
 </div>
