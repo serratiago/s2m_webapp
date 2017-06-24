@@ -15,7 +15,7 @@ $str_result = "";
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
 
-     		if($numrows != $i){
+     		if($numrows != ++$i){
 				$str_result .= ",";
      		}
 
