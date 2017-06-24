@@ -55,5 +55,6 @@ $str_result = "";
     }
 
     </script>
-
+<html lang="br" dir="rtl">
     <div id="linechart" style="width: 900px; height: 500px"></div>
+</html>
