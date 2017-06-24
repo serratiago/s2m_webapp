@@ -8,7 +8,7 @@ $str_result = "";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
- 	$numrows = $result->rowCount();
+ 	$numrows =  $query->rowCount();
 
      for($i=0; $rs = $query->fetch(); $i++){
 
