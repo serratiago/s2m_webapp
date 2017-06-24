@@ -1,3 +1,6 @@
+<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+
 <?php
 include 'config.php';
 include 'conexao.php';
@@ -28,6 +31,9 @@ $str_result = "";
       google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
+
+var myVar = $('#str_banco').val();
+alert(myVar);
 
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Hora');
