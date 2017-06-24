@@ -37,6 +37,7 @@ $str_result = "";
   	String_dados = "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
+  	alert(String_dados);
   	document.getElementById("str_banco").value = String_dados;
       data.addRows(JSON.parse(String_dados));
 
