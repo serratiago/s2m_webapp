@@ -10,5 +10,3 @@ $('.table tr.row-link').each(function(){
         }
     );
 });
-
-alert('oi');
