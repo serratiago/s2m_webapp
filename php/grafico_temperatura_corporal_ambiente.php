@@ -18,7 +18,7 @@ $str_result = "";
      			$str_result .=",";
      	}
      
-     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
+     		$str_result .= "['". $rs["hora"] ."',". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]"."\n";
 
 	}
 ?>
