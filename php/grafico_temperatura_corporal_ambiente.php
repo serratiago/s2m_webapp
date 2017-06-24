@@ -18,8 +18,8 @@ $str_result = "";
 	}
 ?>
 
+<input type="hidden" name="str_banco" id="str_banco" value="<?php echo $str_result ?>">
 
-<textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
