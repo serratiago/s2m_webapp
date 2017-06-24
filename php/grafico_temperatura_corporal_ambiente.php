@@ -1,6 +1,3 @@
-<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
-
 <?php
 include 'config.php';
 include 'conexao.php';
@@ -21,8 +18,8 @@ $str_result = "";
 	}
 ?>
 
-<input type="hidden" name="str_banco" id="str_banco" value="<?php echo $str_result ?>">
 
+<textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -32,9 +29,6 @@ $str_result = "";
 
     function drawChart() {
 
-var myVar = $('#str_banco').val();
-alert(myVar);
-
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Hora');
       data.addColumn('number', 'Temperatura Ambiente');
@@ -43,7 +37,6 @@ alert(myVar);
   	String_dados = "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
-  	alert(String_dados);
   	document.getElementById("str_banco").value = String_dados;
       data.addRows(JSON.parse(String_dados));
 
