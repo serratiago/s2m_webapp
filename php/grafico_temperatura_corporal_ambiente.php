@@ -38,7 +38,7 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Corporal');
 
   
-  var $dados = [new google.charts.Line(document.getElementById('str_banco')];
+  var $dados = [document.getElementById('str_banco'];
 
       data.addRows($dados);
 
