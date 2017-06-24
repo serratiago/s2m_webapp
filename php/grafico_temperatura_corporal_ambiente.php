@@ -13,11 +13,7 @@ $str_result = "";
      for($i=0; $rs = $query->fetch(); $i++){
 
      
-     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."]";
-
-     		if($numrows != ++$i){
-				$str_result .= ",";
-     		}
+     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
 	}
 ?>
@@ -37,6 +33,7 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Corporal');
 
   	String_dados = "["+ document.getElementById("str_banco").value +"]";
+  	String_dados = String_dados.str_replace("],]","]]",String_dados)
   
       data.addRows(JSON.parse(String_dados));
 
