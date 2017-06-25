@@ -34,7 +34,7 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Ambiente');
       data.addColumn('number', 'Temperatura Corporal');
 
-  	String_dados = "["+ document.getElementById("str_banco").value +"]";
+  	String_dados = new Array("["+ document.getElementById("str_banco").value +"]");
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
   	String_dados.reverse();
