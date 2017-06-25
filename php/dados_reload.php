@@ -25,7 +25,7 @@ $SQL .= "order by int_id_msg asc ";
 
 	}
 ?>
-<div id="div_batimentos"><?php echo $batimento; ?></div>
+<div id="div_batimentos"><?php echo $batimentos ?></div>
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
