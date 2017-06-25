@@ -105,3 +105,11 @@
 	width: 15%;
 	height: auto;
 }
+
+
+ @media (max-width : 320px) {
+ 	.grafico{
+ 		width: 90%;
+ 		height: auto;
+ 	}
+  }

@@ -116,7 +116,7 @@ $SQL .= "order by int_id_msg asc ";
 <html lang="br">
 <div id="div_batimentos"><img src="../img/coracao_icone.png">Atividade cardíaca: <?php echo $batimentos ?> / Minuto</div>
 
-  <div id="linechart_ambiente" style="width: 830px; height: 360px"></div>
+  <div id="linechart_ambiente" class="grafico"></div>
   <br>
-  <div id="linechart_paciente" style="width: 830px; height: 360px"></div>
+  <div id="linechart_paciente" class="grafico"></div>
 </html>
