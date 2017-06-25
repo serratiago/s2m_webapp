@@ -36,7 +36,7 @@ $SQL .= "order by int_id_msg asc ";
     <script type="text/javascript">
      
       google.charts.load('visualization', '1', {packages: ['line']});
-      google.charts.setOnLoadCallback(drawChart);
+     	drawChar();
 
     function drawChart() {
 
