@@ -111,9 +111,6 @@ $SQL .= "order by int_id_msg asc ";
 
 
 
- $(document).ready(function(){
- setInterval(function(){load_page_data()},5000);
- });
 
 
     </script>
