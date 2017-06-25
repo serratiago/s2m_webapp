@@ -2,9 +2,12 @@
 include 'config.php';
 include 'conexao.php';
 
-$SQL = "SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora";
-$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc";
-$str_result = "";
+$SQL = "SELECT int_id_msg, hora, pacienteId, temperaturaAmbiente, temperaturaCorporal FROM ";
+$SQL .= "(SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
+$SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
+$SQL .= "order by int_id_msg asc ";
+
+	$str_result = "";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
@@ -38,27 +41,13 @@ $str_result = "";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
 	
-	alert(String_dados);
-
-  	teste = document.getElementById("str_banco").value.replace("], ","]");
-  	teste = teste.replace(" [","[");
-  	
-  	var teste = new Array(teste);
-  	
-  	alert(teste.reverse());
-
-    data.addRows(JSON.parse(teste));
+    data.addRows(JSON.parse(String_dados));
 
       var options = {
         chart: {
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real' 
         },
-        hAxis: {
-       	direction: -1, 
-        slantedText: true, 
-        slantedTextAngle: 90 // here you can even use 180
-    	},
         width: 900,
         height: 500
       };
