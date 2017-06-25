@@ -64,7 +64,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 <script type="text/javascript">
 
  $(document).ready(function(){
- setInterval(function(){startRefresh()},1000);
+ setInterval(function(){startRefresh()},8000);
  });
 
 
