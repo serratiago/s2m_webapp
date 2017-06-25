@@ -6,14 +6,13 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM ";
-$SQL .= "(SELECT top(100) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
+$SQL .= "(SELECT top(200) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
 $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
 
-
-
-	$str_result = "";
+	$str_result_ambiente = "";
+	$str_result_paciente = "";
 	$batimentos = "";
 
 	$query = $conn->prepare($SQL);
@@ -23,7 +22,9 @@ $SQL .= "order by int_id_msg asc ";
      for($i=0; $rs = $query->fetch(); $i++){
 
      
-     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["umidadeAmbiente"] )."],";
+     		$str_result_ambiente .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["umidadeAmbiente"] )."],";
+
+     		$str_result_paciente .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaCorporal"]) ."],";
 
      		$batimentos =  $rs["batimento"];
 
@@ -32,8 +33,9 @@ $SQL .= "order by int_id_msg asc ";
 
 
 <div style="display: none;">
-<textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
-<textarea name="str_banco" id="str_banco_batimentos" > <?php echo $batimentos ?> </textarea>
+<textarea name="str_banco_ambiente" id="str_banco_ambiente" > <?php echo $str_result_ambiente ?> </textarea>
+<textarea name="str_banco_paciente" id="str_banco_paciente" > <?php echo $str_result_paciente ?> </textarea>
+<textarea name="str_banco_batimentos" id="str_banco_batimentos" > <?php echo $batimentos ?> </textarea>
 </div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -44,15 +46,22 @@ $SQL .= "order by int_id_msg asc ";
 
 	function load_page_data(){
 
-	  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
-	  	String_dados = String_dados.replace("], ]","]]");
-	  	String_dados = String_dados.replace("[ [","[[");
-	   	String_dados = JSON.parse(String_dados);
-	    drawChart(String_dados);
+	  	String_dados_ambiente =  "["+ document.getElementById("str_banco_ambiente").value +"]";
+	  	String_dados_ambiente = String_dados_ambiente.replace("], ]","]]");
+	  	String_dados_ambiente = String_dados_ambiente.replace("[ [","[[");
+	   	String_dados_ambiente = JSON.parse(String_dados_ambiente);
+	    drawChart_ambiente(String_dados_ambiente);
+
+
+	    String_dados_paciente =  "["+ document.getElementById("str_banco_paciente").value +"]";
+	  	String_dados_paciente = String_dados_paciente.replace("], ]","]]");
+	  	String_dados_paciente = String_dados_paciente.replace("[ [","[[");
+	   	String_dados_paciente = JSON.parse(String_dados_paciente);
+	    drawChart_paciente(String_dados_paciente);
 	       
 	}
 
-    function drawChart(dados) {
+    function drawChart_ambiente(dados) {
 
     var data = new google.visualization.DataTable();
 	
@@ -64,7 +73,31 @@ $SQL .= "order by int_id_msg asc ";
 
       var options = {
         chart: {
-          title: 'Temperaturas',
+          title: 'Dados do ambiente',
+          subtitle: 'Acompanhamento em tempo real',
+        },
+        lineWidth: 15,
+        width: 650,
+        height: 400
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+
+    function drawChart_paciente(dados) {
+
+    var data = new google.visualization.DataTable();
+	
+	data.addColumn('string', 'Hora');
+    data.addColumn('number', 'Temperatura Corporal');
+
+    data.addRows(dados);
+
+      var options = {
+        chart: {
+          title: 'Dados do paciente',
           subtitle: 'Acompanhamento em tempo real',
         },
         lineWidth: 15,
