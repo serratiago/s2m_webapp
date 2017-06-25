@@ -77,9 +77,9 @@ $SQL .= "order by int_id_msg asc ";
       data.addColumn('string', 'Hora');
       data.addColumn('number', 'Batimentos');
 
-  	String_dados =  "["+ document.getElementById("str_banco_batimentos").value +"]";
-  	String_dados = String_dados.replace("], ]","]]");
-  	String_dados = String_dados.replace("[ [","[[");
+  	String_dados_batimentos =  "["+ document.getElementById("str_banco_batimentos").value +"]";
+  	String_dados_batimentos = String_dados.replace("], ]","]]");
+  	String_dados_batimentos = String_dados.replace("[ [","[[");
 	
     data.addRows(JSON.parse(String_dados));
 
@@ -105,6 +105,6 @@ $SQL .= "order by int_id_msg asc ";
 <html lang="br">
     <div id="linechart" style="width: 650px; height: 400px"></div>
 
-    <br><br>
+    <br><br>----<br>
     <div id="linechart_batimentos" style="width: 650px; height: 400px"></div>
 </html>
