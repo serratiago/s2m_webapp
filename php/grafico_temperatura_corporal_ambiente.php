@@ -50,8 +50,9 @@ $SQL .= "order by int_id_msg asc ";
         chart: {
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real',
-          lineWidth: 5
+          
         },
+        lineWidth: 15,
         width: 900,
         height: 500
       };
