@@ -2,8 +2,8 @@
 include 'config.php';
 include 'conexao.php';
 
-$SQL = "SELECT int_id_msg, hora, pacienteId, temperaturaAmbiente, temperaturaCorporal FROM ";
-$SQL .= "(SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
+$SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal FROM ";
+$SQL .= "(SELECT top(100) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
 $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
@@ -21,9 +21,11 @@ $SQL .= "order by int_id_msg asc ";
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
+     		$batimentos = $rs["batimento"];
+
 	}
 ?>
-
+<div id="div_batimentos"><?php echo $batimento; ?></div>
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
