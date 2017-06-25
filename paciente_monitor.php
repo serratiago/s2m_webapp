@@ -64,20 +64,18 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 <script type="text/javascript">
 
  $(document).ready(function(){
- setInterval(function(){startRefresh()},1000);
+ setInterval(function(){reload_monitor()},5000);
  });
 
 
-function startRefresh() {
+function reload_monitor(){
+$.ajax({url: "php/dados_reload.php", success: function(result){
+        $("#div_reload").html(result);
+    }});
 
-	google.charts.load('visualization', '1', {packages: ['line']});
-	 $.ajax({
-	    url: 'php/dados_reload.php',
-	    async: false
-	}).done(function(data) {
-	    SetTimeout($('#div_reload').html(data),9000); 
-	});
 }
+
+
 
 </script>
 <?
