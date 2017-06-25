@@ -52,7 +52,8 @@ $SQL .= " FROM tbl_paciente";
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td><?php echo $sexo; ?></td>
 	      <td><?php echo $data; ?></td>
-	      <td>         <img src="../img/lupa.png" class="icone">
+	      <td>
+	      	<img src="../img/lupa.png" class="icone">
 	      </td>
 	   </tr>
 	<?
