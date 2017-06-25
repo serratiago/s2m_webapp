@@ -62,7 +62,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </div>
 
 <script type="text/javascript">
-$.ajax({url: "grafico_temperatura_corporal_ambiente.php", success: function(result){
+$.ajax({url: "php/grafico_temperatura_corporal_ambiente.php", success: function(result){
         $("#div_grafico_temperaturas").html(result);
     }});
 </script>
