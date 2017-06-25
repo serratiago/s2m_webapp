@@ -39,6 +39,7 @@ $str_result = "";
   	String_dados = String_dados.replace("[ [","[[");
   	var teste = new Array(String_dados);
   	 teste.reverse();
+  	 alert(teste[1]);
 
      data.addRows(JSON.parse(teste));
 
