@@ -38,10 +38,10 @@ $str_result = "";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
 	
-	alert(String_dados );
+	alert(String_dados);
 
-  	teste = String_dados.replace("], ]","]");
-  	teste = teste.replace("[ [","[");
+  	teste = document.getElementById("str_banco").value.replace("], ","]");
+  	teste = teste.replace(" [","[");
   	
   	var teste = new Array(teste);
   	
