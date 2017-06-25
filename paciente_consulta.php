@@ -18,7 +18,7 @@ include("php/cabecalho.php");
       <th>Nome</th>
       <th>Sexo</th>
       <th>Idade</th>
-      <th>&nbps;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
