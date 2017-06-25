@@ -110,6 +110,12 @@ $SQL .= "order by int_id_msg asc ";
     }
 
 
+
+ $(document).ready(function(){
+ setInterval(function(){load_page_data()},5000);
+ });
+
+
     </script>
 <html lang="br">
 <div id="div_batimentos"><img src="../img/coracao_icone.png">Atividade cardíaca: <?php echo $batimentos ?> / Minuto</div>
