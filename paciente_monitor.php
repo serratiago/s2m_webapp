@@ -54,7 +54,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
   </tbody>
 </table>
-<div id="div_grafico_temperaturas">
+<div id="div_reload">
 </div>
 
 </div>
@@ -63,7 +63,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 <script type="text/javascript">
 $.ajax({url: "php/dados_reload.php", success: function(result){
-        $("#div_grafico_temperaturas").html(result);
+        $("#div_reload").html(result);
     }});
 </script>
 <?
