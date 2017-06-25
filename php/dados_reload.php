@@ -6,7 +6,7 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM ";
-$SQL .= "(SELECT top(600) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
+$SQL .= "(SELECT top(250) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
 $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
@@ -77,8 +77,8 @@ $SQL .= "order by int_id_msg asc ";
           subtitle: 'Acompanhamento em tempo real',
         },
         lineWidth: 15,
-        width: 650,
-        height: 400
+        width: 830,
+        height: 360
       };
 
       var chart = new google.charts.Line(document.getElementById('linechart_ambiente'));
@@ -101,8 +101,8 @@ $SQL .= "order by int_id_msg asc ";
           subtitle: 'Acompanhamento em tempo real',
         },
         lineWidth: 15,
-        width: 650,
-        height: 400
+        width: 830,
+        height: 360
       };
 
       var chart = new google.charts.Line(document.getElementById('linechart_paciente'));
@@ -116,7 +116,7 @@ $SQL .= "order by int_id_msg asc ";
 <html lang="br">
 <div id="div_batimentos"><img src="../img/coracao_icone.png">Atividade cardíaca: <?php echo $batimentos ?> / Minuto</div>
 
-  <div id="linechart_ambiente" style="width: 650px; height: 400px"></div>
+  <div id="linechart_ambiente" style="width: 830px; height: 360px"></div>
   <br>
-  <div id="linechart_paciente" style="width: 650px; height: 400px"></div>
+  <div id="linechart_paciente" style="width: 830px; height: 360px"></div>
 </html>
