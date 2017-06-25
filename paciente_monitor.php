@@ -70,7 +70,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 
 function startRefresh() {
-    setTimeout(startRefresh,1000);
+    setTimeout(startRefresh,5000);
     $.get('php/dados_reload.php', function(data) {
         $('#div_reload').html(data);    
     }); }
