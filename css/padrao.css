@@ -101,3 +101,11 @@
 	font-weight:bold;
 	
 }
+.icone{
+	width: 15%
+	height:auto;
+}
+
+@media (max-width : 320px) {
+
+  }
