@@ -63,18 +63,19 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 <script type="text/javascript">
 
-var vTimeOut;
+ $(document).ready(function(){
+ 
+		 setInterval(function() {
+		    $.ajax({
+		        url: 'php/dados_reload.php',
+		        success: function(res) {
+		          $('#div_reload').html(res.data);   
+		        }
+		    });
+		}, 5000);
 
-$(function() {
-  vTimeOut= setTimeout(startRefresh, 5000)
-});
+ });
 
-
-function startRefresh() {
-  clearInterval(vTimeOut);
-  vTimeOut= setTimeout(startRefresh, 5000);
-  $("#div_reload").load("php/dados_reload.php");
-}
 
 </script>
 <?
