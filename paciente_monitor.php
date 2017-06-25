@@ -63,17 +63,17 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 <script type="text/javascript">
 
+ $(document).ready(function(){
+ 	$(function() {startRefresh(); });
+ });
 
 
-$(function() {
-    startRefresh(); });
 
 function startRefresh() {
     setTimeout(startRefresh,1000);
     $.get('pagelink.php', function(data) {
         $('#div_reload').html(data);    
     }); }
-    
 </script>
 <?
 include("php/rodape.php");
