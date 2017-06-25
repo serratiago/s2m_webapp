@@ -67,6 +67,7 @@ function reload_monitor(){
 $.ajax({url: "php/dados_reload.php", success: function(result){
         $("#div_reload").html(result);
     }});
+alert("Carregou!");
 }
 
 
