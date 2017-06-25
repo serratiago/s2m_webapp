@@ -49,7 +49,8 @@ $SQL .= "order by int_id_msg asc ";
       var options = {
         chart: {
           title: 'Temperaturas',
-          subtitle: 'Acompanhamento em tempo real' 
+          subtitle: 'Acompanhamento em tempo real',
+          lineWidth: 5
         },
         width: 900,
         height: 500
