@@ -8,6 +8,10 @@ $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
 
+echo $SQL;
+
+exit();
+
 	$str_result = "";
 
 	$query = $conn->prepare($SQL);
