@@ -3,7 +3,7 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora";
-$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor";
+$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc";
 $str_result = "";
 
 	$query = $conn->prepare($SQL);
@@ -37,8 +37,9 @@ $str_result = "";
   	String_dados = "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
-  	document.getElementById("str_banco").value = String_dados;
-      data.addRows(JSON.parse(String_dados));
+  	String_dados.reverse();
+
+     data.addRows(JSON.parse(String_dados));
 
       var options = {
         chart: {
