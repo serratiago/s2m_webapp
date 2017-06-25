@@ -69,6 +69,8 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 
 function startRefresh() {
+
+	google.charts.load('visualization', '1', {packages: ['line']});
 	 $.ajax({
 	    url: 'php/dados_reload.php',
 	    async: false
