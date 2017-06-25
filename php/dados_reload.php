@@ -22,7 +22,7 @@ $SQL .= "order by int_id_msg asc ";
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
-     		$batimentos .=  "[\"". $rs["hora"] ."\",".$rs["batimento"]."],";
+     		$batimentos =  $rs["batimento"];
 
 	}
 ?>
@@ -35,10 +35,8 @@ $SQL .= "order by int_id_msg asc ";
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
      
-
       google.charts.load('visualization', '1', {packages: ['line']});
       google.charts.setOnLoadCallback(drawChart);
-      google.charts.setOnLoadCallback(drawChart_batimentos);
 
     function drawChart() {
 
@@ -71,40 +69,11 @@ $SQL .= "order by int_id_msg asc ";
 
 
 
-    function drawChart_batimentos() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Hora');
-      data.addColumn('number', 'Batimentos');
-
-  	String_dados_batimentos =  "["+ document.getElementById("str_banco_batimentos").value +"]";
-  	String_dados_batimentos = String_dados.replace("], ]","]]");
-  	String_dados_batimentos = String_dados.replace("[ [","[[");
-	
-    data.addRows(JSON.parse(String_dados));
-
-      var options = {
-        chart: {
-          title: 'Batimentos Cardíaco',
-          subtitle: 'Acompanhamento em tempo real',
-          
-        },
-        lineWidth: 15,
-        width: 650,
-        height: 400
-      };
-
-      var chart = new google.charts.Line(document.getElementById('linechart_batimentos'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
-    }
-
-
-
     </script>
 <html lang="br">
+<div id="div_batimentos">Atividade cardíaca: <?php echo $batimentos ?></div>
+<br>
     <div id="linechart" style="width: 650px; height: 400px"></div>
 
-    <br><br>----<br>
-    <div id="linechart_batimentos" style="width: 650px; height: 400px"></div>
+  
 </html>
