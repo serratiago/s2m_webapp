@@ -42,7 +42,7 @@ $SQL .= "order by int_id_msg asc ";
      
 
 	google.charts.load("visualization", "1", {packages:["line"]});
-	google.charts.setOnLoadCallback(load_page_data);
+	//google.charts.setOnLoadCallback(load_page_data);
 
 	function load_page_data(){
 
@@ -111,6 +111,9 @@ $SQL .= "order by int_id_msg asc ";
 
 
 
+ $(document).ready(function(){
+ setInterval(function(){drawChart_ambiente},3000);
+ });
 
 
     </script>
