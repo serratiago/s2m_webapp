@@ -64,7 +64,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 <script type="text/javascript">
 
  $(document).ready(function(){
- setInterval(function(){startRefresh()},5000);
+ setInterval(function(){startRefresh()},1000);
  });
 
 
@@ -75,7 +75,7 @@ function startRefresh() {
 	    url: 'php/dados_reload.php',
 	    async: false
 	}).done(function(data) {
-	    $('#div_reload').html(data); 
+	    SetTimeout($('#div_reload').html(data),2000); 
 	});
 }
 
