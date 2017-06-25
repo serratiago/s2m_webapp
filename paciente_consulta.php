@@ -14,11 +14,11 @@ include("php/cabecalho.php");
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Registro</th>
-      <th>Nome</th>
-      <th>Sexo</th>
-      <th>Idade</th>
-      <th>&nbsp;</th>
+      <th width="20%">Registro</th>
+      <th width="20%">Nome</th>
+      <th width="20%">Sexo</th>
+      <th width="20%">Idade</th>
+      <th width="20%">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
