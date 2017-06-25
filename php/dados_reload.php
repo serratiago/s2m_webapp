@@ -37,8 +37,8 @@ $SQL .= "order by int_id_msg asc ";
      
 
 
-google.load("visualization", "1", {packages:["line"]});
-google.setOnLoadCallback(load_page_data);
+google.charts.load("visualization", "1", {packages:["line"]});
+google.charts.setOnLoadCallback(load_page_data);
 
 function load_page_data(){
    	String_dados =  "["+ document.getElementById("str_banco").value +"]";
