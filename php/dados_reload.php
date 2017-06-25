@@ -41,9 +41,7 @@ google.charts.setOnLoadCallback(load_page_data);
 
 function load_page_data(){
 
-	data.addColumn('string', 'Hora');
-    data.addColumn('number', 'Temperatura Ambiente');
-    data.addColumn('number', 'Temperatura Corporal');
+
 
   	String_dados =  "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
@@ -62,6 +60,10 @@ function load_page_data(){
 
     var data = new google.visualization.DataTable();
 	
+	data.addColumn('string', 'Hora');
+    data.addColumn('number', 'Temperatura Ambiente');
+    data.addColumn('number', 'Temperatura Corporal');
+
     data.addRows(dados);
 
       var options = {
