@@ -64,16 +64,17 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 <script type="text/javascript">
 
  $(document).ready(function(){
- 	$(function() {startRefresh(); });
+ setInterval(function(){startRefresh()},3000);
  });
 
 
-
 function startRefresh() {
-    setTimeout(startRefresh,5000);
-    $.get('php/dados_reload.php', function(data) {
-        $('#div_reload').html(data);    
-    }); }
+ $.ajax({
+    url: 'php/dados_reload.php',
+    async: false
+}).done(function(data) {
+    $('#div_reload').html(data); 
+});
 
 
 
