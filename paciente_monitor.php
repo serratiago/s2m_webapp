@@ -54,6 +54,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
   </tbody>
 </table>
+<a href="javascript:startRefresh();">carega</a>
 <div id="div_reload">
 </div>
 
@@ -63,19 +64,14 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 <script type="text/javascript">
 
- $(document).ready(function(){
- setInterval(function(){startRefresh()},3000);
- });
-
 
 function startRefresh() {
- $.ajax({
-    url: 'php/dados_reload.php',
-    async: false
-}).done(function(data) {
-    $('#div_reload').html(data); 
-});
-
+	 $.ajax({
+	    url: 'php/dados_reload.php',
+	    async: false
+	}).done(function(data) {
+	    $('#div_reload').html(data); 
+	});
 }
 
 </script>
