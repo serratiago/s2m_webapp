@@ -15,12 +15,11 @@ include 'conexao.php';
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/padrao.css" rel="stylesheet">
+ 	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
     
-    <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-   
- 	<script type="text/javascript" src="/js/bootstrap.js"></script>
- 	
-    <script type="text/javascript" src="/js/funcoes.js"></script>
+      <script type="text/javascript" src="/js/funcoes.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
     <!--[if lt IE 9]>
