@@ -76,7 +76,7 @@ $SQL .= "order by int_id_msg asc ";
       var chart = new google.charts.Line(document.getElementById('linechart'));
 
       chart.draw(data, google.charts.Line.convertOptions(options));
-      alert('carregou!');
+     
     }
 
 
