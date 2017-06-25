@@ -32,7 +32,7 @@
 }
 #div_reload {
 	margin: 0 auto;
-	width: 50%; /* Valor da Largura */
+	width: auto; /* Valor da Largura */
 }
 
 
