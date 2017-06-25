@@ -66,20 +66,15 @@ $SQL .= "order by int_id_msg asc ";
         chart: {
           title: 'Temperaturas',
           subtitle: 'Acompanhamento em tempo real',
-          
         },
-    
         lineWidth: 15,
         width: 650,
         height: 400
       };
 
       var chart = new google.charts.Line(document.getElementById('linechart'));
-
       chart.draw(data, google.charts.Line.convertOptions(options));
-
     }
-
 
 
     </script>
