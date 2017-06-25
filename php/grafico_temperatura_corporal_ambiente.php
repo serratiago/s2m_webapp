@@ -20,7 +20,7 @@ $str_result = "";
 
 
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
-
+<textarea name="str_banco2" id="str_banco2" > <?php echo $str_result ?> </textarea>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
      
@@ -39,7 +39,7 @@ $str_result = "";
   	String_dados = String_dados.replace("[ [","[[");
   	var teste = new Array(String_dados);
   	 teste.reverse();
-  	 alert(teste[1]);
+  	 alert(teste);
 
      data.addRows(JSON.parse(teste));
 
