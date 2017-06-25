@@ -37,15 +37,17 @@ $str_result = "";
   	String_dados =  "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
-
+	
+	alert(String_dados );
 
   	teste = String_dados.replace("], ]","]");
   	teste = teste.replace("[ [","[");
+  	
   	var teste = new Array(teste);
   	
-  	 alert(teste.reverse());
+  	alert(teste.reverse());
 
-     data.addRows(JSON.parse(teste));
+    data.addRows(JSON.parse(teste));
 
       var options = {
         chart: {
