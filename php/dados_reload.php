@@ -3,8 +3,8 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal FROM ";
-$SQL .= "(SELECT top(100) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,0,horaEnvio)),':', ";
-$SQL .= "DATEPART(MINUTE,horaEnvio)) as hora, ";
+$SQL .= "(SELECT top(100) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
+$SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
 
@@ -34,11 +34,9 @@ $SQL .= "order by int_id_msg asc ";
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
      
-     // google.charts.load('current', {'packages':['line']});
+
       google.charts.load('visualization', '1', {packages: ['line']});
       google.charts.setOnLoadCallback(drawChart);
-
-  
 
     function drawChart() {
 
