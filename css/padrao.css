@@ -25,6 +25,10 @@
 	margin-bottom: 50px;
 }
 
+#div_batimentos img{
+	width: 20%;
+	height: auto;
+}
 #div_reload {
 	margin: 0 auto;
 	width: 50%; /* Valor da Largura */
