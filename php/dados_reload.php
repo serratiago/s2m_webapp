@@ -1,3 +1,6 @@
+<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+
 <?php
 include 'config.php';
 include 'conexao.php';
@@ -36,25 +39,18 @@ $SQL .= "order by int_id_msg asc ";
     <script type="text/javascript">
      
 
-google.charts.load("visualization", "1", {packages:["line"]});
-google.charts.setOnLoadCallback(load_page_data);
+	google.charts.load("visualization", "1", {packages:["line"]});
+	google.charts.setOnLoadCallback(load_page_data);
 
-function load_page_data(){
+	function load_page_data(){
 
-
-
-  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
-  	String_dados = String_dados.replace("], ]","]]");
-  	String_dados = String_dados.replace("[ [","[[");
-   	String_dados = JSON.parse(String_dados);
-
-    drawChart(String_dados);
-       
-}
-
-
-    //google.charts.load('current', {'packages':['line']});
-    //google.charts.setOnLoadCallback(drawChart);
+	  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
+	  	String_dados = String_dados.replace("], ]","]]");
+	  	String_dados = String_dados.replace("[ [","[[");
+	   	String_dados = JSON.parse(String_dados);
+	    drawChart(String_dados);
+	       
+	}
 
     function drawChart(dados) {
 
@@ -81,6 +77,15 @@ function load_page_data(){
 
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
+
+
+
+ $(document).ready(function(){
+                    // First load the chart once 
+                    drawChart();
+                    // Set interval to call the drawChart again
+                    setInterval(drawChart, 5000);
+                    });
 
 
     </script>
