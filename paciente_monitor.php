@@ -18,6 +18,7 @@ include("php/cabecalho.php");
       <th width="20%">Nome</th>
       <th width="20%">Sexo</th>
       <th width="20%">Idade</th>
+       <th width="20%">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -50,6 +51,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td><?php echo $sexo; ?></td>
 	      <td><?php echo $data; ?></td>
+	      <td><img src="img/lupa.png"></td>
 	   </tr>
 
   </tbody>
