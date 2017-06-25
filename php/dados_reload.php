@@ -22,11 +22,12 @@ $SQL .= "order by int_id_msg asc ";
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
-     		$batimentos .= $rs["batimento"];
+     		$batimentos .=  "[\"". $rs["hora"] ."\",".$rs["batimento"]."],";
 
 	}
 ?>
-<div id="div_batimentos"><?php echo $batimentos ?></div>
+
+
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
@@ -64,6 +65,7 @@ $SQL .= "order by int_id_msg asc ";
 
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
+
 
     </script>
 <html lang="br">
