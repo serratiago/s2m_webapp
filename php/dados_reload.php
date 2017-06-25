@@ -37,32 +37,34 @@ $SQL .= "order by int_id_msg asc ";
      
 
 
-google.charts.load("visualization", "1", {packages:["line"]});
-google.charts.setOnLoadCallback(load_page_data);
+google.load("visualization", "1", {packages:["line"]});
+google.setOnLoadCallback(load_page_data);
+
+function load_page_data(){
 
 
+	data.addColumn('string', 'Hora');
+    data.addColumn('number', 'Temperatura Ambiente');
+    data.addColumn('number', 'Temperatura Corporal');
 
-function drawChart(chart_data) {
-    var chart1_data = new google.visualization.DataTable(chart_data,'ppp','ppppppp');
-    var chart1_options = {
-        title: chart1_main_title,
-        vAxis: {title: chart1_vaxis_title,  titleTextStyle: {color: 'red'}}
-    };
+  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
+  	String_dados = String_dados.replace("], ]","]]");
+  	String_dados = String_dados.replace("[ [","[[");
+   	String_dados = JSON.parse(String_dados)
 
-    var chart1_chart = new google.visualization.BarChart(document.getElementById('chart1_div'));
-    chart1_chart.draw(chart1_data, chart1_options);
+    drawChart(String_dados);
+       
 }
 
-//    google.charts.load('current', {'packages':['line']});
-//    google.charts.setOnLoadCallback(drawChart);
 
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart(chart_data) {
+    function drawChart(dados) {
 
-    var data = new google.visualization.DataTable(chart_data);
-   
+    var data = new google.visualization.DataTable();
 	
-    //data.addRows(JSON.parse(String_dados));
+    data.addRows(dados);
 
       var options = {
         chart: {
