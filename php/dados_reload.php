@@ -5,10 +5,10 @@
 include 'config.php';
 include 'conexao.php';
 
-$SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal FROM ";
+$SQL = "SELECT int_id_msg, hora, pacienteId, batimento, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM ";
 $SQL .= "(SELECT top(100) int_id_msg, batimento, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
 $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
-$SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
+$SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal,umidadeAmbiente FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
 
 
@@ -23,7 +23,7 @@ $SQL .= "order by int_id_msg asc ";
      for($i=0; $rs = $query->fetch(); $i++){
 
      
-     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
+     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["umidadeAmbiente"] )."],";
 
      		$batimentos =  $rs["batimento"];
 
@@ -58,7 +58,7 @@ $SQL .= "order by int_id_msg asc ";
 	
 	data.addColumn('string', 'Hora');
     data.addColumn('number', 'Temperatura Ambiente');
-    data.addColumn('number', 'Temperatura Corporal');
+    data.addColumn('number', 'Umidade do ar');
 
     data.addRows(dados);
 
