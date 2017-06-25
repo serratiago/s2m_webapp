@@ -3,7 +3,7 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,dt_data_rec_msg),':', DATEPART(MINUTE,dt_data_rec_msg)) as hora";
-$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg";
+$SQL .= " , pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor";
 $str_result = "";
 
 	$query = $conn->prepare($SQL);
