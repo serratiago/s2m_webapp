@@ -76,17 +76,9 @@ $SQL .= "order by int_id_msg asc ";
       var chart = new google.charts.Line(document.getElementById('linechart'));
 
       chart.draw(data, google.charts.Line.convertOptions(options));
-     
+
     }
 
-
-
- $(document).ready(function(){
-                    // First load the chart once 
-                    drawChart();
-                    // Set interval to call the drawChart again
-                    setInterval(drawChart, 5000);
-                    });
 
 
     </script>
