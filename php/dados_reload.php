@@ -11,6 +11,7 @@ $SQL .= "order by int_id_msg asc ";
 
 
 	$str_result = "";
+	$batimentos = "";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
@@ -21,7 +22,7 @@ $SQL .= "order by int_id_msg asc ";
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
-     		$batimentos = $rs["batimento"];
+     		$batimentos .= $rs["batimento"];
 
 	}
 ?>

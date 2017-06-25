@@ -62,9 +62,13 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </div>
 
 <script type="text/javascript">
+
+function reload(){
 $.ajax({url: "php/dados_reload.php", success: function(result){
         $("#div_reload").html(result);
     }});
+}
+setTimeout(reload, 3000);
 </script>
 <?
 include("php/rodape.php");
