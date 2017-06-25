@@ -64,5 +64,5 @@ $SQL .= "order by int_id_msg asc ";
 
     </script>
 <html lang="br">
-    <div id="linechart" style="width: 700px; height: 400px"></div>
+    <div id="linechart" style="width: 600px; height: 400px"></div>
 </html>
