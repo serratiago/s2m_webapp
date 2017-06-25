@@ -81,7 +81,7 @@ $SQL .= "order by int_id_msg asc ";
         height: 400
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart'));
+      var chart = new google.charts.Line(document.getElementById('linechart_ambiente'));
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
 
@@ -105,7 +105,7 @@ $SQL .= "order by int_id_msg asc ";
         height: 400
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart'));
+      var chart = new google.charts.Line(document.getElementById('linechart_paciente'));
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
 
@@ -114,6 +114,7 @@ $SQL .= "order by int_id_msg asc ";
 <html lang="br">
 <div id="div_batimentos"><img src="../img/coracao_icone.png">Atividade cardíaca: <?php echo $batimentos ?> / Minuto</div>
 
-    <div id="linechart" style="width: 650px; height: 400px"></div>
-  
+  <div id="linechart_ambiente" style="width: 650px; height: 400px"></div>
+  <br>
+  <div id="linechart_paciente" style="width: 650px; height: 400px"></div>
 </html>
