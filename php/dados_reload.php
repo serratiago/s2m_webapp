@@ -53,8 +53,8 @@ $SQL .= "order by int_id_msg asc ";
           
         },
         lineWidth: 15,
-        width: 900,
-        height: 500
+        width: 650,
+        height: 400
       };
 
       var chart = new google.charts.Line(document.getElementById('linechart'));
@@ -64,5 +64,5 @@ $SQL .= "order by int_id_msg asc ";
 
     </script>
 <html lang="br">
-    <div id="linechart" style="width: 600px; height: 400px"></div>
+    <div id="linechart" style="width: 650px; height: 400px"></div>
 </html>
