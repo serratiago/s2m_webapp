@@ -36,12 +36,10 @@ $SQL .= "order by int_id_msg asc ";
     <script type="text/javascript">
      
 
-
-google.load("visualization", "1", {packages:["line"]});
-google.setOnLoadCallback(load_page_data);
+google.charts.load("visualization", "1", {packages:["line"]});
+google.charts.setOnLoadCallback(load_page_data);
 
 function load_page_data(){
-
 
 	data.addColumn('string', 'Hora');
     data.addColumn('number', 'Temperatura Ambiente');
@@ -50,15 +48,15 @@ function load_page_data(){
   	String_dados =  "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
-   	String_dados = JSON.parse(String_dados)
+   	String_dados = JSON.parse(String_dados);
 
     drawChart(String_dados);
        
 }
 
 
-    google.charts.load('current', {'packages':['line']});
-    google.charts.setOnLoadCallback(drawChart);
+    //google.charts.load('current', {'packages':['line']});
+    //google.charts.setOnLoadCallback(drawChart);
 
     function drawChart(dados) {
 
