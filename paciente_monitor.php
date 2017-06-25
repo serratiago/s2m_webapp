@@ -30,7 +30,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
-    $rs = $query->fetch()
+    $rs = $query->fetch();
  
      
      if( $rs['int_sexo_paciente'] == 1) {
