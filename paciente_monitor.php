@@ -62,9 +62,9 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </div>
 
 <script type="text/javascript">
-
+reload_monitor();
  $(document).ready(function(){
- setInterval(function(){reload_monitor()},5000);
+ setInterval(function(){reload_monitor()},1555000);
  });
 
 
