@@ -34,12 +34,13 @@ $str_result = "";
       data.addColumn('number', 'Temperatura Ambiente');
       data.addColumn('number', 'Temperatura Corporal');
 
-  	String_dados = new Array("["+ document.getElementById("str_banco").value +"]");
+  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
-  	String_dados.reverse();
+  	var teste = array(String_dados);
+  	 teste.reverse();
 
-     data.addRows(JSON.parse(String_dados));
+     data.addRows(JSON.parse(teste));
 
       var options = {
         chart: {
