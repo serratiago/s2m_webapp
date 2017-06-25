@@ -68,12 +68,7 @@ $SQL .= "order by int_id_msg asc ";
           subtitle: 'Acompanhamento em tempo real',
           
         },
-        vAxis: {
-            viewWindowMode:'explicit',
-            viewWindow: {
-              max:100,
-              min:5
-            },
+    
         lineWidth: 15,
         width: 650,
         height: 400
