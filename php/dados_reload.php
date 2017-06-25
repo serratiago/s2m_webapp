@@ -48,18 +48,7 @@ function load_page_data(){
     chart_data = JSON.parse(String_dados);
     drawChart(chart_data);
 }
-   
 
-function drawChart(chart_data) {
-    var chart1_data = new google.visualization.DataTable(chart_data);
-    var chart1_options = {
-        title: chart1_main_title,
-        vAxis: {title: chart1_vaxis_title,  titleTextStyle: {color: 'red'}}
-    };
-
-    var chart1_chart = new google.visualization.BarChart(document.getElementById('chart1_div'));
-    chart1_chart.draw(chart1_data, chart1_options);
-}
 
 //    google.charts.load('current', {'packages':['line']});
 //    google.charts.setOnLoadCallback(drawChart);
