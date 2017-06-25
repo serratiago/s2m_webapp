@@ -76,7 +76,7 @@ function startRefresh() {
     $('#div_reload').html(data); 
 });
 
-
+}
 
 </script>
 <?
