@@ -45,7 +45,7 @@ function load_page_data(){
   	String_dados = String_dados.replace("], ]","]]");
   	String_dados = String_dados.replace("[ [","[[");
 
-    chart_data = parseJSON(String_dados);
+    chart_data = JSON.parse(String_dados);
     drawChart(chart_data);
 }
    
