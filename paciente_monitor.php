@@ -56,16 +56,20 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </table>
 
 <div id="div_info_cardio">
-ee
-e
-d
-e<br>:fef
-
-d
-ef
-f<br>
+69/Minuto
 </div>
-
+<br />
+<div id="div_info_tempCorp">
+36C
+</div>
+<br />
+<div id="div_info_tempAmb">
+19C
+</div>
+<br />
+<div id="div_info_UmidadeAmb">
+80%
+</div>
 </div>
 </div>
 </div>
