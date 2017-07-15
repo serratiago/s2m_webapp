@@ -125,6 +125,12 @@ table .info_paciente{
 	width: 65%;
 	border: 1px solid #000;
 }
+
+.div_info_cardio{
+	float: right;
+	border: 3px solid #f00;
+	width: 35%;
+}
  @media (max-width : 320px) {
  	.grafico{
  		width: 90%;

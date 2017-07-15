@@ -54,7 +54,8 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
   </tbody>
 </table>
-<div id="div_reload">
+
+<div id="div_info_cardio">
 </div>
 
 </div>
