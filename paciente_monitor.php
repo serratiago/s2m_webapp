@@ -15,13 +15,15 @@ include("php/cabecalho.php");
 <table class="table table-striped table-hover info_paciente">
   <thead>
     <tr>
-      <th>
-<div id="div_logo_cabecalho">
-      <img src="../img/logo_safe2med.png" class="logo_pequeno_cabecalho">
- </div>      
+      <th colspan="4">
+        <div id="div_logo_cabecalho">
+          <img src="../img/logo_safe2med.png" height="8" class="logo_pequeno_cabecalho">
+          </div>
       </th>
-
+      </tr>
+    <tr>
       <th>Registro</th>
+
       <th>Nome</th>
       <th>Sexo</th>
       <th>Idade</th>
@@ -53,9 +55,8 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 	 ?>
 	 <tr class="info">
-	   <td>&nbsp;</td>
+	   <td><?php echo $rs['str_registro_paciente']; ?></td>
 	
-	      <td><?php echo $rs['str_registro_paciente']; ?></td>
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
 	      <td><?php echo $sexo; ?></td>
 	      <td><?php echo $data; ?></td>
