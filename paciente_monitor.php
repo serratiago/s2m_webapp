@@ -55,21 +55,22 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
   </tbody>
 </table>
 
-<div id="div_info_cardio">
+<div id="div_info_cardio" class="info_dados">
 69/Minuto
 </div>
 <br />
-<div id="div_info_tempCorp">
+<div id="div_info_tempCorp" class="info_dados">>
 36C
 </div>
 <br />
-<div id="div_info_tempAmb">
+<div id="div_info_tempAmb" class="info_dados">>
 19C
 </div>
 <br />
-<div id="div_info_UmidadeAmb">
+<div id="div_info_UmidadeAmb" class="info_dados">>
 80%
 </div>
+
 </div>
 </div>
 </div>
