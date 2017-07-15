@@ -11,7 +11,7 @@ include("php/cabecalho.php");
   </div>
   <div class="panel-body">
   
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover info_paciente">
   <thead>
     <tr>
       <th>Registro</th>
