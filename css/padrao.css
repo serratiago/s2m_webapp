@@ -107,13 +107,23 @@
 }
 
 .info_paciente th{
-	font-size: 28px;
+	font-size: 26px;
 	font-weight:bold;
 }
 
 .info_paciente td{
 	font-size: 24px;
 
+}
+
+.titulo_painel{
+	font-size: 28px;
+	font-weight:bold;
+
+}
+table .info_paciente{
+	width: 65%;
+	border: 1px solid #000;
 }
  @media (max-width : 320px) {
  	.grafico{
