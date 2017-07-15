@@ -125,15 +125,14 @@
 }
 
 #div_info_cardio{
-	float: right;
-	border: 3px solid #f00;
-	width: 30%;
+
 }
 
 .info_dados{
 	float: right;
 	border: 3px solid #f00;
 	width: 30%;
+	height: 250px;
 	font-size: 36px;
 	text-align: center;
 }
