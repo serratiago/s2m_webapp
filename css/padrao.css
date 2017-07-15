@@ -7,7 +7,7 @@
 }
 
 #div_conteudo{
-	margin-top: 80px;
+	margin-top: 50px;
 	padding-top:40px;
 	margin:auto;
 	width:95%;
@@ -105,12 +105,12 @@
 }
 
 .info_paciente th{
-	font-size: 26px;
+	font-size: 24px;
 	font-weight:bold;
 }
 
 .info_paciente td{
-	font-size: 24px;
+	font-size: 22px;
 
 }
 
