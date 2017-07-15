@@ -61,7 +61,7 @@
 	text-align:center;
 }
 .logo_pequeno_cabecalho{
-	width:110px;
+	width:195px;
 	height:auto;
 	vertical-align:top;
 }
@@ -102,12 +102,12 @@
 }
 
 .info_paciente th{
-	font-size: 24px;
+	font-size: 22px;
 	font-weight:bold;
 }
 
 .info_paciente td{
-	font-size: 22px;
+	font-size: 20px;
 
 }
 
