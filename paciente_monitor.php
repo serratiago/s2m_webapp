@@ -6,9 +6,9 @@ include("php/cabecalho.php");
    
 <div class="panel panel-info">
 
- <div class="panel-heading">
+ <!--<div class="panel-heading">
     <h3 class="panel-title titulo_painel">Paciente</h3>
-  </div>
+  </div>-->
   <div class="panel-body">
   
 <table class="table table-striped table-hover info_paciente">
