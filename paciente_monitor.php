@@ -9,8 +9,11 @@ include("php/cabecalho.php");
  <!--<div class="panel-heading">
     <h3 class="panel-title titulo_painel">Paciente</h3>
   </div>-->
-  <div class="panel-body">
-  
+<div class="panel-body">
+<div id="div_logo_cabecalho">
+    <img src="../img/logo_safe2med.png" class="logo_pequeno_cabecalho">
+ </div>
+   
 <table class="table table-striped table-hover info_paciente">
   <thead>
     <tr>

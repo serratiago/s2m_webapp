@@ -32,10 +32,6 @@ include 'conexao.php';
   <div id="div_cabecalho">
  
  
-  <div id="div_logo_cabecalho">
-    <img src="../img/logo_safe2med.png" class="logo_pequeno_cabecalho">
-   </div>
-   
    <!--
    <div id="div_menu">
    
