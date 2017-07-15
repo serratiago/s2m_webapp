@@ -56,6 +56,14 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </table>
 
 <div id="div_info_cardio">
+ee
+e
+d
+e<br>:fef
+
+d
+ef
+f<br>
 </div>
 
 </div>
