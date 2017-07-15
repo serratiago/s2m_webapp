@@ -35,6 +35,8 @@ include 'conexao.php';
   <div id="div_logo_cabecalho">
     <img src="../img/logo_safe2med.png" class="logo_pequeno_cabecalho">
    </div>
+   
+   <!--
    <div id="div_menu">
    
   <nav class="navbar navbar-inverse nav_menu">
@@ -91,6 +93,7 @@ include 'conexao.php';
       </form>
    
     </div> 
+    -->
    
   </div>
    
