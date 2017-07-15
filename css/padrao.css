@@ -129,13 +129,14 @@
 }
 #infos_paciente{
 	float: right;
+	width: 30%
 }
 
 .info_dados{
 	
 	border: 3px solid #f00;
-	width: 30%;
-	height: 250px;
+	width: 100%;
+	height: 180px;
 	font-size: 36px;
 	text-align: center;
 	position: relative;
