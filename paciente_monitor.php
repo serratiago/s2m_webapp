@@ -97,20 +97,32 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </div>
 
 <script type="text/javascript">
-reload_monitor();
+
+reload_monitor_cardio();
+reload_monitor_temperatura();
+
  $(document).ready(function(){
- setInterval(function(){reload_monitor()},5000);
+ setInterval(function(){reload_monitor_cardio()},5000);
+ });
+
+ $(document).ready(function(){
+ setInterval(function(){reload_monitor_temperatura()},5000);
  });
 
 
-function reload_monitor(){
+function reload_monitor_cardio(){
 $.ajax({url: "php/grafico_cardiaco.php", success: function(result){
         $("#div_grafico_cardiaco").html(result);
     }});
 
 }
 
+function reload_monitor_temperatura(){
+$.ajax({url: "php/grafico_temperatura.php", success: function(result){
+        $("#div_grafico_temperatura").html(result);
+    }});
 
+}
 
 </script>
 <?
