@@ -49,6 +49,7 @@ GRAFICO
 
 new Morris.Line({
   // ID of the element in which to draw the chart.
+  xLabelFormat: function(x) { return ''; },
   element: 'div_chart',
   data: [<?php echo $str_result ?>],
   xkey: 'y',
