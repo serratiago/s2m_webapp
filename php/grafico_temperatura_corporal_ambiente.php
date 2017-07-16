@@ -51,10 +51,6 @@ new Morris.Line({
   // ID of the element in which to draw the chart.
 	element: 'div_chart',
   	data: [<?php echo $str_result ?>],
-  	 hoverCallback: function(index, options, content) {
-        var data = options.data[index];
-        $(".morris-hover").html('<div>Custom label: teste</div>');
-    },
     stacked: true,
   	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
