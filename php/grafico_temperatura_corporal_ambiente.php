@@ -52,10 +52,10 @@ new Morris.Line({
 	element: 'div_chart',
   	data: [<?php echo $str_result ?>],
     stacked: true,
-  	xLabelFormat: function(x) { return ''; },
+  	//xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['b'],
-  	labels: ['xHora', 'Batimentos/Minuto'],
+  	labels: ['Batimentos/Minuto'],
   	parseTime: false
 });
 
