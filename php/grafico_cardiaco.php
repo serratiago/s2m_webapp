@@ -16,7 +16,7 @@ include 'conexao.php';
 $SQL = "SELECT TOP (30) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
 $SQL .= ",[hr_data_log_monitor],[int_num_batimento_log_monitor],[int_num_temp_Corporal_log_monitor]";
 $SQL .= ",[int_num_temp_Ambiente_log_monitor],[int_num_umidade_Ambiente_log_monitor]";
-$SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
+$SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor desc";
 
 	$str_result = "";
 
