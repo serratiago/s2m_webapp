@@ -31,7 +31,7 @@ $SQL .= "order by int_id_msg asc ";
 
 	}
 ?>
-
+TESTE
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
