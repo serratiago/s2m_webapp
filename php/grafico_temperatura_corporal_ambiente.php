@@ -44,7 +44,6 @@ $SQL .= "order by int_id_msg asc ";
 
 new Morris.Line({
   // ID of the element in which to draw the chart.
- Morris.Line({
   element: 'div_chart',
   data: [
     { y: '2006', a: 100, b: 90 },
