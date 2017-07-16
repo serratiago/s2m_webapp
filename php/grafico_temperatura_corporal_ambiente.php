@@ -14,7 +14,7 @@ include 'config.php';
 include 'conexao.php';
 
 
-$SQL = "SELECT TOP (100) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
+$SQL = "SELECT TOP (30) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
 $SQL .= ",[hr_data_log_monitor],[int_num_batimento_log_monitor],[int_num_temp_Corporal_log_monitor]";
 $SQL .= ",[int_num_temp_Ambiente_log_monitor],[int_num_umidade_Ambiente_log_monitor]";
 $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
@@ -41,7 +41,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 	}
 ?>
 GRAFICO
-<div id="div_chart" style="height: 250px; width: 400px"></div>
+<div id="div_chart" style="height: 250px; width: 450px"></div>
 
 </html>
 
@@ -51,9 +51,13 @@ new Morris.Line({
   // ID of the element in which to draw the chart.
   xLabelFormat: function(x) { return ''; },
   element: 'div_chart',
+  hoverCallback: function(index, options, content) {
+        return(content);
+    },
   data: [<?php echo $str_result ?>],
   xkey: 'y',
   ykeys: ['a', 'b'],
+  stacked: true,
   labels: ['Series A', 'Series B']
 });
 
