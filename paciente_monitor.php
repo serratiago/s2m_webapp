@@ -63,20 +63,18 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </table>
 <div id="infos_graficos">
 
-<div id="div_grafico_cardiaco">
+	<div id="div_grafico_cardiaco">
+	</div>
 
-</div>
-
-<div id="div_grafico_temperatura">
-
-</div>
-
+	<div id="div_grafico_temperatura">
+	</div>
 
 </div>
 
 <div id="infos_paciente">
 	
 </div>
+
 </div>
 </div>
 </div>
@@ -84,24 +82,34 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 <script type="text/javascript">
 
 reload_grafico();
+reload_dados();
 
  $(document).ready(function(){
  setInterval(function(){reload_grafico()},5000);
  });
-
+$(document).ready(function(){
+ setInterval(function(){reload_dados()},5000);
+ });
 function reload_grafico(){
 
 $.ajax({url: "php/grafico_cardiaco.php", success: function(result){
         $("#div_grafico_cardiaco").html(result);
     }});
+
 $.ajax({url: "php/grafico_temperatura.php", success: function(result){
         $("#div_grafico_temperatura").html(result);
     }});
 
+}
+
+function reload_dados(){
+
+$.ajax({url: "php/dados_monitor.php", success: function(result){
+        $("#infos_paciente").html(result);
+    }});
 
 }
 
-s
 </script>
 <?
 include("php/rodape.php");
