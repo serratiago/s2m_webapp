@@ -49,6 +49,10 @@ GRAFICO
 
 new Morris.Line({
   // ID of the element in which to draw the chart.
+   hoverCallback: function(index, options, content) {
+        var data = options.data[index];
+        $(".morris-hover").html('<div>Custom label: TESTE </div>');
+    },
   xLabelFormat: function(x) { return ''; },
   element: 'div_chart',
   hoverCallback: function(index, options, content) {
