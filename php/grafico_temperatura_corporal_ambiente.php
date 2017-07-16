@@ -30,7 +30,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
      		$hr_data_log_monitor = str_replace(',', '.', $row["hr_data_log_monitor"]);
      		$int_num_batimento_log_monitor = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
-     		$registro = $row["int_id_log_monitor"];
+     		$registro = $row["hr_data_log_monitor"];
 
 	     		 if (++$count == $numrows) {
 	        			$str_result .= "{y:'".$registro."',a:''". $hr_data_log_monitor ."'',b:". $int_num_batimento_log_monitor  ."}";
@@ -55,7 +55,8 @@ new Morris.Line({
   	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['a', 'b'],
-  	labels: ['Hora', 'Batimentos/Minuto']
+  	labels: ['Hora', 'Batimentos/Minuto'],
+  	parseTime: false
 });
 
 </script>
