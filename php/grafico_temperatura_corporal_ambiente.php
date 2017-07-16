@@ -1,3 +1,14 @@
+<html lang="br">
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+	<script src="../js/morris.js-0.5.1/morris.js"></script>
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+	<link rel="stylesheet" href="../js/morris.js-0.5.1/morris.css">
+</head>
+<body>
 <?php
 include 'config.php';
 include 'conexao.php';
@@ -8,8 +19,6 @@ $SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
 $SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
 $SQL .= "order by int_id_msg asc ";
 
-
-
 	$str_result = "";
 
 	$query = $conn->prepare($SQL);
@@ -17,7 +26,6 @@ $SQL .= "order by int_id_msg asc ";
  	$numrows =  $query->rowCount();
 
      for($i=0; $rs = $query->fetch(); $i++){
-
      
      		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
 
@@ -27,42 +35,33 @@ $SQL .= "order by int_id_msg asc ";
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-     
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+<script type="text/javascript">
 
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Hora');
-      data.addColumn('number', 'Temperatura Ambiente');
-      data.addColumn('number', 'Temperatura Corporal');
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
 
-  	String_dados =  "["+ document.getElementById("str_banco").value +"]";
-  	String_dados = String_dados.replace("], ]","]]");
-  	String_dados = String_dados.replace("[ [","[[");
-	
-    data.addRows(JSON.parse(String_dados));
+</script>
 
-      var options = {
-        chart: {
-          title: 'Temperaturas',
-          subtitle: 'Acompanhamento em tempo real',
-          
-        },
-        lineWidth: 15,
-        width: 900,
-        height: 500
-      };
+    <div id="myfirstchart" style="height: 250px;"></div>
 
-      var chart = new google.charts.Line(document.getElementById('linechart'));
 
-      chart.draw(data, google.charts.Line.convertOptions(options));
-    }
-
-    </script>
-<html lang="br">
-    <div id="linechart" style="width: 700px; height: 400px"></div>
 </html>
