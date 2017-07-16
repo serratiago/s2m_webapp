@@ -32,6 +32,7 @@ $SQL .= "order by int_id_msg asc ";
      		$temperaturaCorporal = str_replace(',', '.', $rs["temperaturaCorporal"]);
      		$hora = $rs["hora"];
 
+     		echo "contador:".$count." -- total:".$numrows."<br>";
      		 if (++$count == $numrows) {
         			$str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
 			    } else {
