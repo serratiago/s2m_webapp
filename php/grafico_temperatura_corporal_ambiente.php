@@ -54,7 +54,7 @@ new Morris.Line({
     stacked: true,
   	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
-  	ykeys: ['a'],
+  	ykey: ['a'],
   	labels: ['Batimentos/Minuto']
 });
 
