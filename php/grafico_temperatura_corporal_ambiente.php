@@ -33,9 +33,9 @@ $SQL .= "order by int_id_msg asc ";
      		$hora = $rs["hora"];
 
      		 if (++$count == $numrows) {
-        			$str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}"
+        			$str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
 			    } else {
-			        $str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."},"
+			        $str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."},";
 			    }
 
      		
