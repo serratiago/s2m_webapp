@@ -53,7 +53,7 @@ new Morris.Line({
   	data: [<?php echo $str_result ?>],
   	 hoverCallback: function(index, options, content) {
         var data = options.data[index];
-        $(".morris-hover").html('<div>Custom label: ' + data.label + '</div>');
+        $(".morris-hover").html('<div>Custom label: teste</div>');
     },
     stacked: true,
   	xLabelFormat: function(x) { return ''; },
