@@ -28,7 +28,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
      foreach ($result as $row){
 
-     		$hr_data_log_monitor = str_replace(',', '.', $row["hr_data_log_monitor"]);
+     		$hr_data_log_monitor = str_replace(':', '.', $row["hr_data_log_monitor"]);
      		$int_num_batimento_log_monitor = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
      		$registro = $row["int_id_log_monitor"];
 
