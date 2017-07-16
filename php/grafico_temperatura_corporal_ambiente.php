@@ -55,7 +55,7 @@ new Morris.Line({
   	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['b'],
-  	labels: ['Hora', 'Batimentos/Minuto'],
+  	labels: ['xHora', 'Batimentos/Minuto'],
   	parseTime: false
 });
 
