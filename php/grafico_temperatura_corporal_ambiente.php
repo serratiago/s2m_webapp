@@ -21,16 +21,16 @@ $SQL .= "order by int_id_msg asc ";
 
 	$str_result = "";
 
-	$query = $conn->prepare($SQL);
-    $query->execute();
- 	$numrows =  $query->fetchAll();
- 	$count = 0;
+ 	$result = $conn->query($SQL)->fetchAll();
 
-     for($i=0; $rs = $query->fetch(); $i++){
+	$numrows = count($result);
+	$count = 0;
+	
+     foreach ($result as $row){
 
-     		$temperaturaAmbiente = str_replace(',', '.', $rs["temperaturaAmbiente"]);
-     		$temperaturaCorporal = str_replace(',', '.', $rs["temperaturaCorporal"]);
-     		$hora = $rs["hora"];
+     		$temperaturaAmbiente = str_replace(',', '.', $row["temperaturaAmbiente"]);
+     		$temperaturaCorporal = str_replace(',', '.', $row["temperaturaCorporal"]);
+     		$hora = $row["hora"];
 
      		echo "contador:".$count." -- total:".$numrows."<br>";
      		 if (++$count == $numrows) {
