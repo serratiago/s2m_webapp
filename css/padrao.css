@@ -134,8 +134,14 @@
 }
 #infos_graficos{
 	width: 65%;
-	float: left;;
+	float: left;
 }
+#infos_graficos h3{
+	font-size: 18px;
+	font-weight: bold;
+	color: #888;
+}
+
 .info_dados{
 	border: 2px solid #f00;
 	width: 100%;

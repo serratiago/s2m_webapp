@@ -40,7 +40,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc) tbl order 
 			
 	}
 ?>
-Temperatura
+Temperatura Corporal
 <div id="div_chart_temperatura" style="height: 230px; width: 100%"></div>
 
 </html>
