@@ -158,8 +158,8 @@ height: 230px; width: 100%;
 	color:#FFF;
 }
 .info_dados h1{
-	font-size: 30px;
-	color: #FFF;
+	font-size: 30px !important;
+	color: #FFF !important;
 }
  @media (max-width : 320px) {
  	.grafico{
