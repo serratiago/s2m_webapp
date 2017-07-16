@@ -30,7 +30,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
      		$temperaturaAmbiente = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
      		$temperaturaCorporal = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
-     		$hora = $row["hr_data_log_monitor"];
+     		$hora = $row["int_id_log_monitor"];
 
      		 if (++$count == $numrows) {
         			$str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
