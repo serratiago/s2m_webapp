@@ -24,10 +24,21 @@ $SQL .= "order by int_id_msg asc ";
 	$query = $conn->prepare($SQL);
     $query->execute();
  	$numrows =  $query->rowCount();
+ 	$count = 0;
 
      for($i=0; $rs = $query->fetch(); $i++){
-     
-     		$str_result .= "[\"". $rs["hora"] ."\",". str_replace(',', '.', $rs["temperaturaAmbiente"]) .",". str_replace(',', '.', $rs["temperaturaCorporal"] )."],";
+
+     		$temperaturaAmbiente = str_replace(',', '.', $rs["temperaturaAmbiente"]);
+     		$temperaturaCorporal = str_replace(',', '.', $rs["temperaturaCorporal"]);
+     		$hora = $rs["hora"];
+
+     		 if (++$count == $numrows) {
+        			$str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}"
+			    } else {
+			        $str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."},"
+			    }
+
+     		
 
 	}
 ?>
@@ -45,15 +56,7 @@ $SQL .= "order by int_id_msg asc ";
 new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'div_chart',
-  data: [
-    { y: '2006', a: 100, b: 90 },
-    { y: '2007', a: 75,  b: 65 },
-    { y: '2008', a: 50,  b: 40 },
-    { y: '2009', a: 75,  b: 65 },
-    { y: '2010', a: 50,  b: 40 },
-    { y: '2011', a: 75,  b: 65 },
-    { y: '2012', a: 100, b: 90 }
-  ],
+  data: [document.getElementById("str_banco").value;],
   xkey: 'y',
   ykeys: ['a', 'b'],
   labels: ['Series A', 'Series B']
