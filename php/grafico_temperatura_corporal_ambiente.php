@@ -55,7 +55,7 @@ new Morris.Line({
   data: [<?php echo $str_result ?>],
   xkey: 'y',
   ykeys: ['a', 'b'],
-  labels: ['teste','Series A', 'Series B']
+  labels: ['Series A', 'Series B']
 });
 
 </script>
