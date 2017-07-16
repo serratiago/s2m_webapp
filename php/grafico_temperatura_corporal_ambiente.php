@@ -56,7 +56,7 @@ $SQL .= "order by int_id_msg asc ";
 new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'div_chart',
-  data: [document.getElementById("str_banco").value;],
+  data: [document.getElementById("str_banco").value],
   xkey: 'y',
   ykeys: ['a', 'b'],
   labels: ['Series A', 'Series B']
