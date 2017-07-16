@@ -3,7 +3,6 @@ include("php/cabecalho.php");
 ?>
 <div id="div_conteudo">
 
-   
 <div class="panel panel-info">
 
  <!--<div class="panel-heading">
@@ -64,6 +63,14 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
   </tbody>
 </table>
+<div id="infos_graficos">
+
+<div id="div_grafico_cardiaco">
+
+</div>
+
+
+</div>
 
 <div id="infos_paciente">
 	<div id="div_info_cardio" class="info_dados">
@@ -95,8 +102,8 @@ reload_monitor();
 
 
 function reload_monitor(){
-$.ajax({url: "php/dados_reload.php", success: function(result){
-        $("#div_reload").html(result);
+$.ajax({url: "php/grafico_cardiaco.php", success: function(result){
+        $("#div_grafico_cardiaco").html(result);
     }});
 
 }
