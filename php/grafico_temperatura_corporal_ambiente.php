@@ -54,21 +54,9 @@ new Morris.Line({
   	xkey: 'y',
   	ykeys: ['a', 'b'],
   	stacked: true,
-
-  		xLabelFormat: function(x) { return ''; },
-     	hoverCallback: function(index, options, content) {
-        var data = options.data[index];
-        $(".morris-hover").html('<div>Custom label: TESTE </div>');
-    },
-    
-  		xLabelFormat: function(x) { return ''; },
-  		element: 'div_chart',
-  		hoverCallback: function(index, options, content) {
-        return(content);
-    },
-
-
-  labels: ['Series A', 'Series B']
+  	xLabelFormat: function(x) { return ''; },
+  	xLabels:'day',
+  	labels: ['Series A', 'Series B']
 });
 
 </script>
