@@ -34,9 +34,9 @@ $SQL .= "order by int_id_msg asc ";
 
      		echo "contador:".$count." -- total:".$numrows."<br>";
      		 if (++$count == $numrows) {
-        			$str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
+        			$str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
 			    } else {
-			        $str_result .= "{ y: '".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."},";
+			        $str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."},";
 			    }
 
      		
@@ -53,7 +53,7 @@ $SQL .= "order by int_id_msg asc ";
 </html>
 
 <script type="text/javascript">
-
+alert(document.getElementById("str_banco").value);
 new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'div_chart',
