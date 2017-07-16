@@ -23,7 +23,7 @@ $SQL .= "order by int_id_msg asc ";
 
 	$query = $conn->prepare($SQL);
     $query->execute();
- 	$numrows =  $query->count(fetch());
+ 	$numrows =  $query->rowCount();
  	$count = 0;
 
      for($i=0; $rs = $query->fetch(); $i++){
