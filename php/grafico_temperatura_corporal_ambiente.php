@@ -51,12 +51,15 @@ new Morris.Line({
   // ID of the element in which to draw the chart.
 	element: 'div_chart',
   	data: [<?php echo $str_result ?>],
+  	 hoverCallback: function(index, options, content) {
+        var data = options.data[index];
+        $(".morris-hover").html('<div>Custom label: ' + data.label + '</div>');
+    },
+    stacked: true,
+  	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['a', 'b'],
-  	stacked: true,
-  	xLabelFormat: function(x) { return ''; },
-  	xLabels:'day',
-  	labels: ['Series A', 'Series B']
+  	//labels: ['Series A', 'Series B']
 });
 
 </script>
