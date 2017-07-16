@@ -129,8 +129,9 @@
 	width: 30%;
 }
 #infos_graficos{
-	width: 60%;
+	width: 55%;
 	border:solid #000 2px;
+	float: left;;
 }
 .info_dados{
 	border: 3px solid #f00;
