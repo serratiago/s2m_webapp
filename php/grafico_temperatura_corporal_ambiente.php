@@ -59,7 +59,7 @@ new Morris.Line({
   	xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['a', 'b'],
-  	//labels: ['Series A', 'Series B']
+  	labels: ['Series A', 'Series B']
 });
 
 </script>
