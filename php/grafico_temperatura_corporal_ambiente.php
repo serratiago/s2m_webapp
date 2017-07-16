@@ -32,7 +32,6 @@ $SQL .= "order by int_id_msg asc ";
      		$temperaturaCorporal = str_replace(',', '.', $row["temperaturaCorporal"]);
      		$hora = $row["hora"];
 
-     		echo "contador:".$count." -- total:".$numrows."<br>";
      		 if (++$count == $numrows) {
         			$str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
 			    } else {
@@ -43,10 +42,6 @@ $SQL .= "order by int_id_msg asc ";
 
 	}
 ?>
-
-<div style="">
-<textarea name="str_banco" id="str_banco"><?php echo $str_result ?></textarea>
-</div>
 
 <div id="div_chart" style="height: 250px;"></div>
 
