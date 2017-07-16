@@ -14,7 +14,7 @@ include 'config.php';
 include 'conexao.php';
 
 
-$SQL = "SELECT TOP (20) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
+$SQL = "SELECT TOP (100) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
 $SQL .= ",[hr_data_log_monitor],[int_num_batimento_log_monitor],[int_num_temp_Corporal_log_monitor]";
 $SQL .= ",[int_num_temp_Ambiente_log_monitor],[int_num_umidade_Ambiente_log_monitor]";
 $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
@@ -30,7 +30,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
      		$temperaturaAmbiente = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
      		$temperaturaCorporal = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
-     		$hora = $row["hr_data_log_monitor"];
+     		$hora = $row["int_id_log_monitor"];
 
 	     		 if (++$count == $numrows) {
 	        			$str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
