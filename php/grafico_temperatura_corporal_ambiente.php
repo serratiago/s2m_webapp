@@ -35,6 +35,10 @@ TESTE
 <div style="display: none;">
 <textarea name="str_banco" id="str_banco" > <?php echo $str_result ?> </textarea>
 </div>
+GRAFICO...<br>
+<div id="myfirstchart" style="height: 250px;"></div>
+
+</html>
 
 <script type="text/javascript">
 
@@ -60,8 +64,3 @@ new Morris.Line({
 });
 
 </script>
-
-    <div id="myfirstchart" style="height: 250px;"></div>
-
-
-</html>
