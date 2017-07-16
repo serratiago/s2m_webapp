@@ -49,19 +49,25 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
 new Morris.Line({
   // ID of the element in which to draw the chart.
-  data: [<?php echo $str_result ?>],
-     hoverCallback: function(index, options, content) {
+	element: 'div_chart',
+  	data: [<?php echo $str_result ?>],
+  	xkey: 'y',
+  	ykeys: ['a', 'b'],
+  	stacked: true,
+
+  		xLabelFormat: function(x) { return ''; },
+     	hoverCallback: function(index, options, content) {
         var data = options.data[index];
         $(".morris-hover").html('<div>Custom label: TESTE </div>');
     },
-  xLabelFormat: function(x) { return ''; },
-  element: 'div_chart',
-  hoverCallback: function(index, options, content) {
+    
+  		xLabelFormat: function(x) { return ''; },
+  		element: 'div_chart',
+  		hoverCallback: function(index, options, content) {
         return(content);
     },
-  xkey: 'y',
-  ykeys: ['a', 'b'],
-  stacked: true,
+
+
   labels: ['Series A', 'Series B']
 });
 
