@@ -137,7 +137,7 @@
 	float: left;
 }
 .div_grafico{
-height: 230px; width: 100%
+height: 230px; width: 100%;
 }
 .titulo_grafico{
 	font-size: 18px;
@@ -147,7 +147,7 @@ height: 230px; width: 100%
 }
 
 .info_dados{
-	border: 2px solid #f00;
+	background-color:#4682B4;
 	width: 100%;
 	height: 110px;
 	font-size: 36px;
@@ -155,6 +155,7 @@ height: 230px; width: 100%
 	position: relative;
 	margin-bottom: 10px;
 	font-size: 48px;
+	color:#FFF;
 }
  @media (max-width : 320px) {
  	.grafico{
