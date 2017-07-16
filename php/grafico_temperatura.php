@@ -7,6 +7,7 @@
 
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
 	<link rel="stylesheet" href="../js/morris.js-0.5.1/morris.css">
+	<link rel="stylesheet" href="../css/padrao.css">
 </head>
 <body>
 <?php
@@ -40,9 +41,9 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc) tbl order 
 			
 	}
 ?>
-Temperatura Corporal
-<div id="div_chart_temperatura" style="height: 230px; width: 100%"></div>
-
+<div class="titulo_grafico">Temperatura Corporal
+<div id="div_chart_temperatura" class="div_grafico"></div>
+</div>
 </html>
 
 <script type="text/javascript">

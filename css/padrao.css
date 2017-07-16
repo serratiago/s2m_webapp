@@ -136,10 +136,14 @@
 	width: 65%;
 	float: left;
 }
-#infos_graficos h3{
+.div_grafico{
+height: 230px; width: 100%
+}
+.titulo_grafico{
 	font-size: 18px;
 	font-weight: bold;
 	color: #888;
+	border-width: 2px solid #000;
 }
 
 .info_dados{
