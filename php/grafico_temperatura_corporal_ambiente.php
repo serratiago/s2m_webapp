@@ -49,7 +49,8 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
 new Morris.Line({
   // ID of the element in which to draw the chart.
-   hoverCallback: function(index, options, content) {
+  data: [<?php echo $str_result ?>],
+     hoverCallback: function(index, options, content) {
         var data = options.data[index];
         $(".morris-hover").html('<div>Custom label: TESTE </div>');
     },
@@ -58,7 +59,6 @@ new Morris.Line({
   hoverCallback: function(index, options, content) {
         return(content);
     },
-  data: [<?php echo $str_result ?>],
   xkey: 'y',
   ykeys: ['a', 'b'],
   stacked: true,
