@@ -67,6 +67,10 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 
 </div>
 
+<div id="div_grafico_temperatura">
+
+</div>
+
 
 </div>
 
