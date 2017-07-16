@@ -10,7 +10,6 @@ include("php/cabecalho.php");
   </div>-->
 <div class="panel-body">
   
-   
 <table class="table table-striped table-hover info_paciente">
   <thead>
     <tr>
@@ -22,7 +21,6 @@ include("php/cabecalho.php");
       </tr>
     <tr>
       <th>Registro</th>
-
       <th>Nome</th>
       <th>Sexo</th>
       <th>Idade</th>
@@ -73,21 +71,21 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
 </div>
 
 <div id="infos_paciente">
-	<div id="div_info_cardio" class="info_dados">
-	69/Minuto
-	</div>
+		<div id="div_info_cardio" class="info_dados">
+		69/Minuto
+		</div>
 
-	<div id="div_info_tempCorp" class="info_dados">>
-	36C
-	</div>
+		<div id="div_info_tempCorp" class="info_dados">>
+		36C
+		</div>
 
-	<div id="div_info_tempAmb" class="info_dados">>
-	19C
-	</div>
+		<div id="div_info_tempAmb" class="info_dados">>
+		19C
+		</div>
 
-	<div id="div_info_UmidadeAmb" class="info_dados">>
-	80%
-	</div>
+		<div id="div_info_UmidadeAmb" class="info_dados">>
+		80%
+		</div>
 
 </div>
 </div>
