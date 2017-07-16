@@ -42,7 +42,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
 	}
 ?>
-
+teste
 <div id="div_chart" style="height: 250px;"></div>
 
 </html>
