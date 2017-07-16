@@ -13,11 +13,11 @@
 include 'config.php';
 include 'conexao.php';
 
-$SQL = "SELECT int_id_msg, hora, pacienteId, temperaturaAmbiente, temperaturaCorporal FROM ";
-$SQL .= "(SELECT top(100) int_id_msg, CONCAT(DATEPART(HOUR,DATEADD(HOUR,-3,dt_data_rec_msg)),':', ";
-$SQL .= "DATEPART(MINUTE,dt_data_rec_msg)) as hora, ";
-$SQL .= " pacienteId, temperaturaAmbiente, temperaturaCorporal FROM tbl_iot_monitor order by int_id_msg desc) tbl ";
-$SQL .= "order by int_id_msg asc ";
+
+$SQL = "SELECT TOP (100) [int_id_log_monitor],[int_id_paciente_log_monitor],[dt_data_log_monitor]";
+$SQL .= ",[hr_data_log_monitor],[int_num_batimento_log_monitor],[int_num_temp_Corporal_log_monitor]";
+$SQL .= ",[int_num_temp_Ambiente_log_monitor],[int_num_umidade_Ambiente_log_monitor]";
+$SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
 
 	$str_result = "";
 
@@ -28,9 +28,9 @@ $SQL .= "order by int_id_msg asc ";
 	
      foreach ($result as $row){
 
-     		$temperaturaAmbiente = str_replace(',', '.', $row["temperaturaAmbiente"]);
-     		$temperaturaCorporal = str_replace(',', '.', $row["temperaturaCorporal"]);
-     		$hora = $row["hora"];
+     		$temperaturaAmbiente = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
+     		$temperaturaCorporal = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
+     		$hora = $row["hr_data_log_monitor"];
 
      		 if (++$count == $numrows) {
         			$str_result .= "{y:'".$hora."',a:". $temperaturaAmbiente .",b:". $temperaturaCorporal ."}";
