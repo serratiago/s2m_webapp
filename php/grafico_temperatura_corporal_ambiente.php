@@ -33,7 +33,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by int_id_log_monitor";
      		$temperaturaCorporal = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
      		$hora = $row["hr_data_log_monitor"];
 
-     		if($conta10 == 10){
+     		if($conta10 == 5){
 
 
 	     		 if (++$count == $numrows) {
