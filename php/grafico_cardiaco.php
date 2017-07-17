@@ -41,7 +41,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc) tbl order 
 			
 	}
 ?>
-<div class="titulo_grafico">Cardio
+<div class="titulo_grafico">Atividade Cardíaca
 <div id="div_chart_cardio" class="div_grafico"></div>
 </div>
 </html>
