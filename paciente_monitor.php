@@ -51,7 +51,7 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
      $data = $dia."/".$mes."/".$ano;
 
 	 ?>
-	 <tr class="info">
+	 <tr class="paciente_dados">
 	   <td><?php echo $rs['str_registro_paciente']; ?></td>
 	
 	      <td><?php echo $rs['str_nome_paciente']; ?></td>
