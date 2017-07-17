@@ -47,7 +47,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
 		</div>
 
 		<div id="div_info_tempAmb" class="info_dados">
-		<h1>Temperatura Corporal</h1>
+		<h1>Temperatura Ambiente</h1>
 		<?php echo $int_num_umidade_Ambiente_log_monitor;?>°C
 		</div>
 
