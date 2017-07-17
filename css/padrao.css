@@ -156,8 +156,8 @@ height: 230px; width: 100%;
 	font-size: 44px;
 	color:#FFF;
 	margin-bottom: 10px;
-	padding-bottom: 10px;
-
+	padding-bottom: 5px;
+	padding-top: 5px;
 }
 .info_paciente{
 background-color:#4682B4;	
