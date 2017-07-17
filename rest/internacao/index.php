@@ -18,7 +18,6 @@ if(isset($_GET['registropaciente'])) {
 
 }
 
-echo $tsql;
 
  	$result = $conn->query($tsql)->fetchAll();
 	$numrows = count($result);
