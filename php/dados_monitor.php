@@ -37,22 +37,22 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
 ?>
 
 		<div id="div_info_cardio" class="info_dados">
-		<h1>Atividade Cardíaca</h1>
+		<h1 class="info_dados_h1">Atividade Cardíaca</h1>
 		<?php echo $int_num_batimento_log_monitor;?>/Minuto
 		</div>
 
 		<div id="div_info_tempCorp" class="info_dados">
-		<h1>Temperatura Corporal</h1>
+		<h1 class="info_dados_h1">Temperatura Corporal</h1>
 		<?php echo $int_num_temp_Corporal_log_monitor;?>°C
 		</div>
 
 		<div id="div_info_tempAmb" class="info_dados">
-		<h1>Temperatura Ambiente</h1>
+		<h1 class="info_dados_h1">Temperatura Ambiente</h1>
 		<?php echo $int_num_umidade_Ambiente_log_monitor;?>°C
 		</div>
 
 		<div id="div_info_UmidadeAmb" class="info_dados">
-		<h1>Umidade relativa do ar</h1>
+		<h1 class="info_dados_h1">Umidade relativa do ar</h1>
 		<?php echo $int_num_umidade_Ambiente_log_monitor;?>%
 		</div>
 
