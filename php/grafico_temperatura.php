@@ -56,7 +56,7 @@ new Morris.Line({
   	//xLabelFormat: function(x) { return ''; },
   	xkey: 'y',
   	ykeys: ['b'],
-  	labels: ['Batimentos/Minuto'],
+  	labels: ['Temperatura em Celsius'],
   	parseTime: false
 });
 
