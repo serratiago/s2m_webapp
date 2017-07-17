@@ -23,7 +23,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	$int_sexo_paciente = utf8_encode($row['int_sexo_paciente']);
 	$int_dt_nascimento_paciente = utf8_encode($row['int_dt_nascimento_paciente']);
 	$str_nome_medico = utf8_encode($row['str_nome_medico']);
-	$int_num_andar_quarto = utf8_encode($row['int_num_andar_quarto ']);
+	$int_num_andar_quarto = utf8_encode($row['int_num_andar_quarto']);
 	$int_num_quarto = utf8_encode($row['int_num_quarto']);
 
 	$json .= '{"str_nome_paciente":"'.$str_nome_paciente.'","str_nome_convenio":"'.$str_nome_convenio.'",'; 
