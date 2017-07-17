@@ -153,12 +153,12 @@ height: 230px; width: 100%;
 	font-size: 36px;
 	text-align: center;
 	position: relative;
-	font-size: 48px;
+	font-size: 44px;
 	color:#FFF;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	padding-bottom: 10px;
-	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-top: 5x;
 }
 .info_paciente{
 background-color:#4682B4;	
@@ -167,7 +167,7 @@ font-size: 16px;
 font-weight: bold;
 }
 .info_dados h1{
-	font-size: 30px !important;
+	font-size: 28px !important;
 	color: #FFF !important;
 }
  @media (max-width : 320px) {
