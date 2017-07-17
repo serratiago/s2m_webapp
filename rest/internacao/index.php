@@ -4,11 +4,18 @@ include '../../php/conexao.php';
 
 if(isset($_GET['registropaciente'])) {
 	$registropaciente = $_GET['registropaciente'];
+
+	$tsql= "select int_id_paciente,str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
+	$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao ";
+	$tsql .= "where str_registro_paciente=".$registropaciente;
+
+}else{
+	$tsql= "select int_id_paciente,str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
+	$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao ";
+
 }
 
-$tsql= "select int_id_paciente,str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
-$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao ";
-$tsql .= "where str_registro_paciente=".$registropaciente;
+
 $getResults = sqlsrv_query($conn, $tsql);
 
 if( $conn === false ) {
