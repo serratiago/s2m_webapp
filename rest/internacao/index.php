@@ -16,12 +16,6 @@ if(isset($_GET['registropaciente'])) {
 }
 
 
-$getResults = sqlsrv_query($conn, $tsql);
-
-if( $conn === false ) {
-     die( print_r( sqlsrv_errors(), true));
-}
-
  	$result = $conn->query($tsql)->fetchAll();
 	$numrows = count($result);
 	$count = 0;
