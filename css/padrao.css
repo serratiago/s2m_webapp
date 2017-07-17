@@ -118,7 +118,7 @@
 }
 .info_paciente{
 	width: 100% !important;
-	border: 1px solid #000 !important;
+	border: 0px !important;
 }
 
 #div_info_cardio{
