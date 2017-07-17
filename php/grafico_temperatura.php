@@ -30,13 +30,13 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc) tbl order 
      foreach ($result as $row){
 
      		$hr_data_log_monitor = str_replace(',', '.', $row["hr_data_log_monitor"]);
-     		$int_num_batimento_log_monitor = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
+     		$int_num_temp_Corporal_log_monitor = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
      		$registro = $row["hr_data_log_monitor"];
 
 	     		 if (++$count == $numrows) {
-	        			$str_result .= "{y:'".$registro."',a:'". $hr_data_log_monitor ."',b:". $int_num_batimento_log_monitor  ."}";
+	        		$str_result .= "{y:'".$registro."',a:'". $hr_data_log_monitor ."',b:". $int_num_temp_Corporal_log_monitor ."}";
 				    } else {
-				        $str_result .= "{y:'".$registro."',a:'". $hr_data_log_monitor ."',b:". $int_num_batimento_log_monitor  ."},";
+				    $str_result .= "{y:'".$registro."',a:'". $hr_data_log_monitor ."',b:". $int_num_temp_Corporal_log_monitor ."},";
 				    }
 			
 	}
