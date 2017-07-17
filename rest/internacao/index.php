@@ -2,6 +2,9 @@
 include '../../php/config.php';
 include '../../php/conexao.php';
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
 if(isset($_GET['registropaciente'])) {
 	$registropaciente = $_GET['registropaciente'];
 
@@ -15,6 +18,7 @@ if(isset($_GET['registropaciente'])) {
 
 }
 
+echo $tsql;
 
  	$result = $conn->query($tsql)->fetchAll();
 	$numrows = count($result);
@@ -46,4 +50,5 @@ if(isset($_GET['registropaciente'])) {
 
 $json .= ']}';
 echo str_replace(',]}', ']}', $json);
+}
 ?> 
