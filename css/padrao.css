@@ -159,13 +159,15 @@ height: 230px; width: 100%;
 	padding-bottom: 5px;
 	padding-top: 5px;
 }
-.titulos{
+.div_titulos{
 	font-size: 16px;
 	font-weight: bold;
 	background-color:#4682B4;
-	text-align: right;
+	text-align: center;
+	vertical-align: middle;;
 	width: 100%;
 	color: #FFF;
+	height: 25px;
 }
 .paciente_dados{
 background-color:#4682B4;	
