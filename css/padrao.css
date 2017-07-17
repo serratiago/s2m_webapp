@@ -162,6 +162,10 @@ height: 230px; width: 100%;
 .titulos{
 	font-size: 16px;
 	font-weight: bold;
+	background-color:#4682B4;
+	text-align: right;
+	width: 100%;
+	color: #FFF;
 }
 .paciente_dados{
 background-color:#4682B4;	
