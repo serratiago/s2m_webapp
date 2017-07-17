@@ -26,7 +26,7 @@ echo $tsql;
 
 	$json = '{"internacao":[';
 
-	if($numrows<0){
+	if($numrows>0){
 
     foreach ($result as $row){
 
