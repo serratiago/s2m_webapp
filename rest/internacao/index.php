@@ -7,7 +7,7 @@ if(isset($_GET['registropaciente'])) {
 }
 
 $tsql= "select int_id_paciente,str_nome_paciente, int_sexo_paciente,int_dt_nascimento_paciente,str_nome_convenio,";
-$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao "
+$tsql .= "str_nome_medico,int_id_andar_quarto,int_num_quarto from viw_internacao ";
 $tsql .= "where str_registro_paciente=".$registropaciente;
 $getResults = sqlsrv_query($conn, $tsql);
 
