@@ -36,7 +36,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
 	}
 ?>
 
-		<spam class="div_titulos">Dados aferidos ás <?php echo $hr_data_log_monitor;?></spam>
+		<div class="div_titulos">Dados aferidos ás <?php echo $hr_data_log_monitor;?></div>
 		<br />
 		<div id="div_info_cardio" class="info_dados">
 		<h1 class="info_dados_h1">Atividade Cardíaca</h1>
