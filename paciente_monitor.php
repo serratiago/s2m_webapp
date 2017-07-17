@@ -51,12 +51,12 @@ $SQL .= " FROM tbl_paciente where int_id_paciente=1";
      $data = $dia."/".$mes."/".$ano;
 
 	 ?>
-	 <tr class="paciente_dados">
-	   <td><?php echo $rs['str_registro_paciente']; ?></td>
+	 <tr>
+	   <td class="paciente_dados"><?php echo $rs['str_registro_paciente']; ?></td>
 	
-	      <td><?php echo $rs['str_nome_paciente']; ?></td>
-	      <td><?php echo $sexo; ?></td>
-	      <td><?php echo $data; ?></td>
+	      <td class="paciente_dados"><?php echo $rs['str_nome_paciente']; ?></td>
+	      <td class="paciente_dados"><?php echo $sexo; ?></td>
+	      <td class="paciente_dados"><?php echo $data; ?></td>
 	   </tr>
 
   </tbody>
