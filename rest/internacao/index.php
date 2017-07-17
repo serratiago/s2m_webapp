@@ -1,6 +1,6 @@
 <?php
-include '../php/config.php';
-include '../php/conexao.php';
+include '../../php/config.php';
+include '../../php/conexao.php';
 
 if(isset($_GET['registropaciente'])) {
 	$registropaciente = $_GET['registropaciente'];
