@@ -15,7 +15,7 @@ include 'config.php';
 include 'conexao.php';
 
 $SQL = "SELECT TOP (1) [int_id_log_monitor],[hr_data_log_monitor],[int_num_batimento_log_monitor],";
-$SQL .= "[int_num_temp_Corporal_log_monitor],[int_num_umidade_Ambiente_log_monitor]";
+$SQL .= "[int_num_temp_Corporal_log_monitor],[int_num_umidade_Ambiente_log_monitor],,[int_num_temperatura_Ambiente_log_monitor]";
 $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
 
 	$str_result = "";
@@ -32,7 +32,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
      		$int_num_batimento_log_monitor = str_replace(',', '.', $row["int_num_batimento_log_monitor"]);
      		$int_num_temp_Corporal_log_monitor = str_replace(',', '.', $row["int_num_temp_Corporal_log_monitor"]);
      		$int_num_umidade_Ambiente_log_monitor= str_replace(',', '.', $row["int_num_umidade_Ambiente_log_monitor"]);
-     		$int_num_umidade_Ambiente_log_monitor = str_replace(',', '.', $row["int_num_umidade_Ambiente_log_monitor"]);
+     		$int_num_temperatura_Ambiente_log_monitor = str_replace(',', '.', $row["int_num_temperatura_Ambiente_log_monitor"]);
 	}
 ?>
 
@@ -50,7 +50,7 @@ $SQL .= "FROM [dbo].[tbl_monitor] order by [int_id_log_monitor] desc";
 
 		<div id="div_info_tempAmb" class="info_dados">
 		<h1 class="info_dados_h1">Temperatura Ambiente</h1>
-		<?php echo $int_num_umidade_Ambiente_log_monitor;?>°C
+		<?php echo $int_num_temperatura_Ambiente_log_monitor;?>°C
 		</div>
 
 		<div id="div_info_UmidadeAmb" class="info_dados">
